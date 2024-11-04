@@ -1,6 +1,8 @@
 #include "TemperatureSensor.h"
 #include "Arduino.h"
 
+// Could add farenheit return
+
 TemperatureSensor::TemperatureSensor(int pin) {
     this->pin = pin;
     pinMode(pin, INPUT);
