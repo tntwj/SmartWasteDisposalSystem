@@ -1,7 +1,6 @@
 #include "State.h"
 
-void State::init() {
-
+State::State() {
 }
 
 State* State::handle() {
