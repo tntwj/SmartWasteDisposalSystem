@@ -6,7 +6,7 @@ class TemperatureController {
     public:
         TemperatureController();
         void attachSensor(TemperatureSensor* sensor);
-        void detathSensor();
+        void detachSensor();
         void readTemp();
         bool isTemperatureHigh();
     private:
