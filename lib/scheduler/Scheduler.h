@@ -14,8 +14,8 @@ class Scheduler {
 
 public:
     void init(int basePeriod);
-    virtual bool addTask(Task* task) = 0;
-    virtual void schedule() = 0;
+    virtual bool addTask(Task* task);
+    virtual void schedule();
 };
 
 #endif
