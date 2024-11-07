@@ -4,7 +4,7 @@
 #include "Timer.h"
 #include "Task.h"
 
-#define MAX_TASKS 10
+#define MAX_TASKS 4
 
 class Scheduler {
     int basePeriod;
