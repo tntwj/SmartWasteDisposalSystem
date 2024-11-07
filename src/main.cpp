@@ -6,9 +6,9 @@ Scheduler sched;
 void setup() {
   Serial.begin(9600);
   Serial.println("ArduinoUno");
-
+  sched.init(50);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  sched.schedule();
 }
