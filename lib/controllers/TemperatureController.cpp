@@ -9,7 +9,7 @@ void TemperatureController::attachSensor(TemperatureSensor* sensor) {
     this->tempSensor = sensor;
 }
 
-void TemperatureController::detathSensor() {
+void TemperatureController::detachSensor() {
     delete this->tempSensor;
 }
 

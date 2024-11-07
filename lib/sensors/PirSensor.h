@@ -4,7 +4,7 @@
 class PirSensor {
     public:
         PirSensor(int pin);
-        bool hasDetected();
+        bool detect();
     private:
         int pin;
 };
