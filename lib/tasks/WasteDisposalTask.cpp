@@ -5,5 +5,6 @@ void WasteDisposalTask::tick() {
     if (nextState != nullptr) {
         delete currentState;
         currentState = nextState;
+        currentState->init();
     }
 }
