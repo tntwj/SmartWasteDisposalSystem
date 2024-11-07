@@ -18,5 +18,5 @@ void TemperatureController::readTemp() {
 }
 
 bool TemperatureController::isTemperatureHigh() {
-    return this->currentTemp > TEMPERATURE_THRESHOLD;
+    return this->currentTemp >= TEMPERATURE_THRESHOLD;
 }
