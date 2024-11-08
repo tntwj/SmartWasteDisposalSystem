@@ -8,7 +8,7 @@ void MotionDetector::attachSensor(PirSensor* sensor) {
     this->sensor = sensor;
 }
 
-void MotionDetector::detect() {
+void MotionDetector::detachSensor() {
     delete this->sensor;
 }
 
