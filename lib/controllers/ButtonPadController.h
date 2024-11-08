@@ -5,19 +5,13 @@
 
 class ButtonPadController {
     public:
-        ButtonPadController();
-        void attachOpenButton(Button* openButton);
-        void attachCloseButton(Button* closeButton);
-        void detachAll();
-        void readOpenButtonState();
-        void readCloseButtonState();
-        bool getOpenButtonState();
-        bool getCloseButtonState();
+        ButtonPadController(Button* openButton, Button* closeButton);
+        ~ButtonPadController();
+        bool isOpenPressed();
+        bool isClosePressed();
     private:
         Button* openButton;
         Button* closeButton;
-        bool isOpenPressed;
-        bool isClosePressed;
 };
 
 #endif

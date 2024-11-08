@@ -1,44 +1,57 @@
 #include "DoorController.h"
 #include "Arduino.h"
+#include "Defines.h"
 
-DoorController::DoorController() {
-    this->doorState = DOOR_CLOSED;
-}
-
-void DoorController::attachActuator(Servo* actuator) {
+DoorController::DoorController(Servo* actuator) {
     this->servo = actuator;
-    this->doorState = DOOR_CLOSED;
-    this->servo->write(90);
-    delay(150);
+    this->servo->write(DOOR_CLOSED_ANGLE);
+    delay(SWEEP_TIME);
+    this->currentDoorState = DOOR_CLOSED;
 }
 
-void DoorController::detachActuator() {
+DoorController::~DoorController() {
     delete this->servo;
 }
 
-void DoorController::openFront() {
-    if (doorState == DOOR_CLOSED) {
-        this->servo->write(180);
-        delay(150);
-        this->doorState = FRONT_OPEN;
+/**
+ * Attempts to open the front door. Returns true if successful, false otherwise.
+ */
+bool DoorController::openFront() {
+    if (currentDoorState == DOOR_CLOSED) {
+        this->servo->write(FRONT_DOOR_OPEN_ANGLE);
+        delay(SWEEP_TIME);
+        this->currentDoorState = FRONT_OPEN;
+        return true;
     }
+    return false;
 }
 
-void DoorController::openBack() {
-    if (doorState == DOOR_CLOSED) {
+/**
+ * Attempts to open the back door. Returns true if successful, false otherwise.
+ */
+bool DoorController::openBack() {
+    if (currentDoorState == DOOR_CLOSED) {
         this->servo->write(0);
-        delay(150);
-        this->doorState = BACK_OPEN;
+        delay(SWEEP_TIME);
+        this->currentDoorState = BACK_OPEN;
+        return true;
     }
+    return false;
 }
 
-void DoorController::close() {
-    if (doorState == BACK_OPEN || doorState == FRONT_OPEN) {
-        this->doorState = DOOR_CLOSED;
-        this->servo->write(90);
+/**
+ * Attempts to close door. Returns true if successful, false otherwise.
+ */
+bool DoorController::close() {
+    if (currentDoorState == BACK_OPEN || currentDoorState == FRONT_OPEN) {
+        this->currentDoorState = DOOR_CLOSED;
+        this->servo->write(DOOR_CLOSED_ANGLE);
+        delay(SWEEP_TIME);
+        return true;
     }
+    return false;
 }
 
 DoorState DoorController::getCurrentState() {
-    return this->doorState;
+    return this->currentDoorState;
 }

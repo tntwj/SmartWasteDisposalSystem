@@ -6,6 +6,6 @@ PirSensor::PirSensor(int pin) {
     pinMode(pin, INPUT);
 }
 
-boolean PirSensor::hasDetected() {
+boolean PirSensor::sense() {
     return digitalRead(pin) == HIGH;
 }

@@ -9,16 +9,15 @@ enum DoorState {
 
 class DoorController {
     public:
-        DoorController();
-        void attachActuator(Servo* actuator);
-        void detachActuator();
-        void openFront();
-        void openBack();
-        void close();
+        DoorController(Servo* actuator);
+        ~DoorController();
+        bool openFront();
+        bool openBack();
+        bool close();
         DoorState getCurrentState();
     private:
         Servo* servo;
-        DoorState doorState;
+        DoorState currentDoorState;
 };
 
 #endif

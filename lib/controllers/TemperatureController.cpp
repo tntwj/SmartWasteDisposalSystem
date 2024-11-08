@@ -1,22 +1,29 @@
 #include "TemperatureController.h"
 #include "Defines.h"
 
-TemperatureController::TemperatureController() {
+TemperatureController::TemperatureController(TemperatureSensor* sensor) {
+    this->tempSensor = sensor;
     this->currentTemp = 0;
 }
 
-void TemperatureController::attachSensor(TemperatureSensor* sensor) {
-    this->tempSensor = sensor;
-}
-
-void TemperatureController::detachSensor() {
+TemperatureController::~TemperatureController() {
     delete this->tempSensor;
 }
 
+/**
+ * Reads the temp.
+ */
 void TemperatureController::readTemp() {
-    this->currentTemp = this->tempSensor->readTemperature();
+    this->currentTemp = this->tempSensor->getTemp();
 }
 
-bool TemperatureController::isTemperatureHigh() {
+/**
+ * Returns the last read value. In order to get the latest value readTemp() should be called first.
+ */
+int TemperatureController::getTemp() {
+    return this->currentTemp;
+}
+
+bool TemperatureController::isTempHigh() {
     return this->currentTemp >= TEMPERATURE_THRESHOLD;
 }

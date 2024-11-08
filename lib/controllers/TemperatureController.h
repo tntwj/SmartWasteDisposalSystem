@@ -5,11 +5,11 @@
 
 class TemperatureController {
     public:
-        TemperatureController();
-        void attachSensor(TemperatureSensor* sensor);
-        void detachSensor();
+        TemperatureController(TemperatureSensor* sensor);
+        ~TemperatureController();
         void readTemp();
-        bool isTemperatureHigh();
+        int getTemp();
+        bool isTempHigh();
     private:
         TemperatureSensor* tempSensor;
         int currentTemp;

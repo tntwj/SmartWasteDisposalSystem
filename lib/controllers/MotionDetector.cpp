@@ -1,21 +1,24 @@
 #include "MotionDetector.h"
 
-MotionDetector::MotionDetector() {
+MotionDetector::MotionDetector(PirSensor* sensor) {
+    this->pirSensor = sensor;
     this->detected = false;
 }
 
-void MotionDetector::attachSensor(PirSensor* sensor) {
-    this->sensor = sensor;
+MotionDetector::~MotionDetector() {
+    delete this->pirSensor;
 }
 
-void MotionDetector::detachSensor() {
-    delete this->sensor;
+/**
+ * Attempts to sense anything that moves.
+ */
+void MotionDetector::sense() {
+    this->detected = this->pirSensor->sense();
 }
 
-void MotionDetector::detect() {
-    this->detected = this->sensor->detect();
-}
-
+/**
+ * Returns the latest reading. In order to get the latest value sense() should be called first.
+ */
 bool MotionDetector::hasDetected() {
     return this->detected;
 }

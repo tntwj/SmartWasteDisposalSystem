@@ -2,27 +2,30 @@
 #include "Defines.h"
 #include "Arduino.h"
 
-WasteDetector::WasteDetector() {
-    this->wasteLevel = 0.0;
+WasteDetector::WasteDetector(UltraSoundProxy* sensor) {
+    this->proxySensor = sensor;
+    this->wasteLevel = 0.0f;
 }
 
-void WasteDetector::attachSensor(UltraSoundProxy* sensor) {
-    this->sensor = sensor;
+WasteDetector::~WasteDetector() {
+    delete this->proxySensor;
 }
 
-void WasteDetector::detachSensor() {
-    delete this->sensor;
-}
-
+/**
+ * Reads the current level.
+ */
 void WasteDetector::readLevel() {
-    float readValue = this->sensor->getDistance();
-    this->wasteLevel = readValue / (abs(MAX_WASTE_LEVEL) + abs(MIN_WASTE_LEVEL));
+    float readValue = this->proxySensor->getDistance();
+    this->wasteLevel = readValue / (MAX_WASTE_LEVEL - MIN_WASTE_LEVEL);
 }
 
+/**
+ * Returns the latest read value. In order to get the latest value readLevel() should be called first.
+ */
 float WasteDetector::getLevel() {
     return this->wasteLevel;
 }
 
 bool WasteDetector::isFull() {
-    return wasteLevel >= 1.0;
+    return wasteLevel >= 1.0f;
 }

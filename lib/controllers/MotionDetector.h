@@ -5,13 +5,12 @@
 
 class MotionDetector {
     public:
-        MotionDetector();
-        void attachSensor(PirSensor* sensor);
-        void detachSensor();
-        void detect();
+        MotionDetector(PirSensor* sensor);
+        ~MotionDetector();
+        void sense();
         bool hasDetected();
     private:
-        PirSensor* sensor;
+        PirSensor* pirSensor;
         bool detected;
 };
 
