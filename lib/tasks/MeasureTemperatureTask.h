@@ -7,8 +7,7 @@ class MeasureTemperatureTask: public Task {
     private:
         TemperatureController tempController;
     public:
-        void tick() {
-        }
+        void tick();
 };
 
 #endif
