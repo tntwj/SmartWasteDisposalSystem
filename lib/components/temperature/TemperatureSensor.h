@@ -4,7 +4,7 @@
 class TemperatureSensor {
     public:
         TemperatureSensor(int pin);
-        int readTemperature();
+        int getTemperature();
     private:
         int pin;
 };
