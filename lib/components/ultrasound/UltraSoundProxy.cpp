@@ -1,7 +1,7 @@
 #include "Arduino.h"
 #include "UltraSoundProxy.h"
 
-/* Assuming a room temperature of 20 celsius */
+/* Assuming an ambient temperature of 20 degree celsius */
 const float vs = 331.5 + 0.6*20;
 
 UltraSoundProxy::UltraSoundProxy(int trigPin, int echoPin) {
