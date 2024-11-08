@@ -6,10 +6,8 @@
 class LedController {
 
     public:
-        LedController();
-        void attachGreenLed(Led* led);
-        void attachRedLed(Led* led);
-        void detachAll();
+        LedController(Led* greenLed, Led* redLed);
+        LedController::~LedController();
         void switchOnRed();
         void switchOffRed();
         void switchOnGreen();
