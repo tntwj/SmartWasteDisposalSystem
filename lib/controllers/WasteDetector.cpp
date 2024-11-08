@@ -1,5 +1,5 @@
 #include "WasteDetector.h"
-#include "defines.h"
+#include "Defines.h"
 #include "Arduino.h"
 
 WasteDetector::WasteDetector() {

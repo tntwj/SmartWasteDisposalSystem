@@ -1,5 +1,5 @@
 #include "TemperatureController.h"
-#include "defines.h"
+#include "Defines.h"
 
 TemperatureController::TemperatureController() {
     this->currentTemp = 0;
