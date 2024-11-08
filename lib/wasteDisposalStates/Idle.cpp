@@ -1,9 +1,11 @@
 #include "State.h"
 
-State::State() {
-    ledController->switchOnGreen();
-}
+class Idle: public State {
+    Idle() {
+        ledController->switchOnGreen();
+    }
 
-State* State::handle() {
-    return nullptr;
-}
+    State* handle() {
+        return nullptr;
+    }
+};
