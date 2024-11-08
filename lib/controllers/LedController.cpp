@@ -1,17 +1,11 @@
 #include "LedController.h"
 
-LedController::LedController() {
+LedController::LedController(Led* greenLed, Led* redLed) {
+    this->greenLed = greenLed;
+    this->redLed = redLed;
 }
 
-void LedController::attachGreenLed(Led* led) {
-    this->greenLed = led;
-}
-
-void LedController::attachRedLed(Led* led) {
-    this->redLed = led;
-}
-
-void LedController::detachAll() {
+LedController::~LedController() {
     delete greenLed;
     delete redLed;
 }
