@@ -8,6 +8,7 @@
 #include "DoorController.h"
 #include "LedController.h"
 #include "Defines.h"
+#include <Pins.h>
 
 /**controllers as global because every state should use controllers to act/verify events */
 ButtonPadController* buttonPadController = new ButtonPadController();
