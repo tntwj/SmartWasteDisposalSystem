@@ -1,7 +1,7 @@
 #ifndef __BUTTON_PAD_CONTROLLER__
 #define __BUTTON_PAD_CONTROLLER__
 
-#include "ButtonImpl.h"
+#include <ButtonImpl.h>
 
 class ButtonPadController {
     public:
