@@ -1,7 +1,6 @@
 #include <Arduino.h>
 #include "Pins.h"
-#include <LedController.h>
-#include <MotionDetector.h>
+#include <LedController.h> //To be removed
 #include <DoorController.h>
 
 /**

@@ -10,6 +10,9 @@
 #include "Defines.h"
 #include <Pins.h>
 
+/**
+ * PUT THEM AS EXTERN AND DECLARE THEM IN MAIN"!!!!
+ */
 /**controllers as global because every state should use controllers to act/verify events */
 ButtonPadController* buttonPadController = new ButtonPadController();
 MotionDetector* motionDetector = new MotionDetector();
