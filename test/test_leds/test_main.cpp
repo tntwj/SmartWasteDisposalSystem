@@ -2,6 +2,11 @@
 #include "LedController.h"
 #include "Pins.h"
 
+/**
+ * Use the following command in PlatformIO terminal:
+ * pio test -e uno --filter="test/test_leds" --without-testing && pio device monitor
+ */
+
 LedController* ledController;
 
 void setup() {

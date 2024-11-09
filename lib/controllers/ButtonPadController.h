@@ -1,17 +1,17 @@
 #ifndef __BUTTON_PAD_CONTROLLER__
 #define __BUTTON_PAD_CONTROLLER__
 
-#include "Button.h"
+#include "ButtonImpl.h"
 
 class ButtonPadController {
     public:
-        ButtonPadController(Button* openButton, Button* closeButton);
+        ButtonPadController(ButtonImpl* openButton, ButtonImpl* closeButton);
         ~ButtonPadController();
         bool isOpenPressed();
         bool isClosePressed();
     private:
-        Button* openButton;
-        Button* closeButton;
+        ButtonImpl* openButton;
+        ButtonImpl* closeButton;
 };
 
 #endif

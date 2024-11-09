@@ -7,7 +7,7 @@ class LedController {
 
     public:
         LedController(Led* greenLed, Led* redLed);
-        LedController::~LedController();
+        ~LedController();
         void switchOnRed();
         void switchOffRed();
         void switchOnGreen();

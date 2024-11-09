@@ -1,13 +1,11 @@
 #ifndef __BUTTON_IMPL__
 #define __BUTTON_IMPL__
 
-#include "Button.h"
-
-class ButtonImpl: public Button {
+class ButtonImpl {
     public:
         ButtonImpl(int pin);
         bool isPressed();
-    protected:
+    private:
         int pin;
 };
 

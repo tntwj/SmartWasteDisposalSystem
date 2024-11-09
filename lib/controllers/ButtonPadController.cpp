@@ -1,6 +1,6 @@
 #include "ButtonPadController.h"    
     
-ButtonPadController::ButtonPadController(Button* openButton, Button* closeButton) {
+ButtonPadController::ButtonPadController(ButtonImpl* openButton, ButtonImpl* closeButton) {
     this->openButton = openButton;
     this->closeButton = closeButton;
 }

@@ -6,8 +6,8 @@ LedController::LedController(Led* greenLed, Led* redLed) {
 }
 
 LedController::~LedController() {
-    delete greenLed;
-    delete redLed;
+    delete this->greenLed;
+    delete this->redLed;
 }
 
 void LedController::switchOnRed() {
