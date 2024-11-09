@@ -5,14 +5,16 @@
 
 class TemperatureController {
     public:
-        TemperatureController(TemperatureSensor* sensor);
+        TemperatureController(TemperatureSensor* sensor, int tempThreshold);
         ~TemperatureController();
         void readTemp();
         int getTemp();
+        int getThreshold();
         bool isTempHigh();
     private:
         TemperatureSensor* tempSensor;
         int currentTemp;
+        int tempThreshold;
 };
 
 #endif
