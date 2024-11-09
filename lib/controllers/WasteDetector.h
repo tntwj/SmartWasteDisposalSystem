@@ -5,14 +5,18 @@
 
 class WasteDetector {
     public:
-        WasteDetector(UltraSoundProxy* sensor);
+        WasteDetector(UltraSoundProxy* sensor, float maxDistance, float minDistance);
         ~WasteDetector();
         void readLevel();
+        float getDistance();
         float getLevel();
         bool isFull();
     
     private:
         UltraSoundProxy* proxySensor;
+        float distance;
+        float maxDistance;
+        float minDistance;
         float wasteLevel;
 };
     

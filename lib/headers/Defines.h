@@ -7,8 +7,8 @@
 #define SWEEP_TIME 200 //Optimal for the SG90. 180 could is the minimum acceptable.
 
 #define TEMPERATURE_THRESHOLD 25
-#define MAX_WASTE_LEVEL 20
-#define MIN_WASTE_LEVEL 5
+#define MAX_WASTE_LEVEL 0.5f
+#define MIN_WASTE_LEVEL 0.05f
 
 #define SCHEDULE_PERIOD 50
 #define MEASURE_LEVEL_PERIOD 50
