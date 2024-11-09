@@ -31,7 +31,7 @@ bool DoorController::openFront() {
  */
 bool DoorController::openBack() {
     if (currentDoorState == DOOR_CLOSED) {
-        this->servo->write(0);
+        this->servo->write(BACK_DOOR_OPEN_ANGLE);
         delay(SWEEP_TIME);
         this->currentDoorState = BACK_OPEN;
         return true;
