@@ -19,6 +19,7 @@ MotionDetector* motionDetector = new MotionDetector(new PirSensor(PIR_SENSOR_PIN
 DoorController* doorController = new DoorController(new Servo());
 LedController* ledController = new LedController(new Led(GREEN_LED_PIN), new Led(RED_LED_PIN));
 
+
 class WasteDisposalTask: public Task{
     private:
         State* currentState;
