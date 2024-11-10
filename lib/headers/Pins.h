@@ -9,6 +9,6 @@
 #define ULTRA_SOUND_TRIG_PIN 8
 #define OPEN_BUTTON_PIN 12
 #define CLOSE_BUTTON_PIN 11
-#define TEMP_SENSOR_PIN 0
+#define TEMP_SENSOR_PIN A0
 
 #endif
