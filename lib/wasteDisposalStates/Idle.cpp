@@ -1,5 +1,4 @@
-#include "State.h"
-#include "EnteringWaste.cpp"
+#include "Idle.h"
 
 class Idle: public State {
     public:

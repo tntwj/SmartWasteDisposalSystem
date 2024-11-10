@@ -1,7 +1,5 @@
-#include "State.h"
-#include "WasteReceived.cpp"
-#include "MeasureLevelTask.h"
-#include "ContainerFull.cpp"
+#include "EnteringWaste.h"
+
 
 class EnteringWaste: public State{
     public:

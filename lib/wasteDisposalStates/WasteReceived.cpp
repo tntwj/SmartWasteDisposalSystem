@@ -1,4 +1,4 @@
-#include "State.h"
+#include "WasteReceived.h"
 
 class WasteReceived: public State {
     public:
