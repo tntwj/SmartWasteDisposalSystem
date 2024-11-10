@@ -6,6 +6,6 @@ class WasteReceived: public State {
             doorController->close();
         }
     State* handle() override {
-
+        return nullptr;
     }
 };
