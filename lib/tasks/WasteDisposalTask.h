@@ -4,6 +4,7 @@
 #include "Task.h"
 #include "State.h"
 #include "ButtonPadController.h"
+#include "MeasureTemperatureTask.h"
 #include "MotionDetector.h"
 #include "DoorController.h"
 #include "LedController.h"
