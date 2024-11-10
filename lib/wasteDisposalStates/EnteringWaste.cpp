@@ -1,11 +1,12 @@
 #include "State.h"
 
 class EnteringWaste: public State{
-    EnteringWaste() {
-        doorController->openFront();
-    }
+    public:
+        EnteringWaste() {
+            doorController->openFront();
+        }
 
-    State* handle() {
+    State* handle() override{
         return nullptr;
     }
 };

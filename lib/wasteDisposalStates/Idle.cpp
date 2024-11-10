@@ -1,11 +1,16 @@
 #include "State.h"
+#include "EnteringWaste.cpp"
 
 class Idle: public State {
-    Idle() {
-        ledController->switchOnGreen();
-    }
+    public:
+        Idle() {
+            ledController->switchOnGreen();
+        }
 
-    State* handle() {
+    State* handle() override{
+        if (buttonPadController->isOpenPressed()) {
+            return new EnteringWaste();
+        }
         return nullptr;
     }
 };
