@@ -3,7 +3,7 @@
 class WasteReceived: public State {
     public:
         WasteReceived() {
-
+            doorController->close();
         }
     State* handle() override {
 
