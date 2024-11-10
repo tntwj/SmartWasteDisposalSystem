@@ -3,6 +3,7 @@
 
 #include "State.h"
 #include "EnteringWaste.h"
+#include "SleepState.h"
 
 class Idle : public State {
     public:
