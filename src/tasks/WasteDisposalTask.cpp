@@ -1,23 +1,30 @@
 #include "WasteDisposalTask.h"
 #include "wasteDisposalStates/DangerousTemp.h"
 
-//problema: alla fine della temperatura alta, per tornare allo stato precedente, bisogna fare di nuovo entry 
 void WasteDisposalTask::tick() {
     State* nextState = nullptr;
-    State* dangerousTempState = nullptr;
-    bool isTempNormal = tempController->isTempHigh();
-
-    if (isTempNormal) {
-        if (dangerousTempState != nullptr) {
-            delete dangerousTempState;
-        }
-        nextState = currentState->handle();
-        if (nextState != nullptr) {
-            delete currentState;
-            currentState = nextState;
-        }
-    } else {
-        dangerousTempState = new DangerousTemp();
-        dangerousTempState->handle();
+    bool isCurrentTempHigh = tempController->isTempHigh();
+    nextState = currentState->handle();
+    if (nextState != nullptr) {
+        delete currentState;
+        currentState = nextState;
+        currentState->init();
+    }
+    if (isCurrentTempHigh) {
+        isPrevTempHigh = isCurrentTempHigh;
+        stateBeforeHighTemp = currentState;
+        currentState = new DangerousTemp();
+    }
+    /**
+     * se avviene lo switch dalla temperatura alta alla temperatura bassa, stateBeforeHighTemp 
+     * serve nel caso in cui la temperatura tornasse normale venga tornato allo stato prima della high temperature.
+    */
+    if (isPrevTempHigh && !isCurrentTempHigh) {
+        delete currentState;
+        currentState = stateBeforeHighTemp;
+        currentState->init();
+        isPrevTempHigh = false;
+    } else if (!isPrevTempHigh && isCurrentTempHigh) {
+        currentState->init();
     }
 }
