@@ -1,4 +1,4 @@
-#include <TemperatureController.h>
+#include "TemperatureController.h"
 #include <Defines.h>
 
 TemperatureController::TemperatureController(TemperatureSensor* sensor, int tempThreshold) {

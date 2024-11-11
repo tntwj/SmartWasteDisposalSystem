@@ -1,7 +1,7 @@
 #ifndef __MSG_SERVICE__
 #define __MSG_SERVICE__
 
-#include "Arduino.h"
+#include <Arduino.h>
 
 extern MsgServiceClass MsgService;
 

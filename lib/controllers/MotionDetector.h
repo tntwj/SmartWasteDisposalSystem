@@ -1,7 +1,7 @@
 #ifndef __MOTION_DETECTOR__
 #define __MOTION_DETECTOR__
 
-#include "PirSensor.h"
+#include <PirSensor.h>
 
 class MotionDetector {
     public:

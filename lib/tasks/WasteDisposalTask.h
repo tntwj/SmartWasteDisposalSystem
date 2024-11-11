@@ -1,9 +1,9 @@
 #ifndef __WASTEDISPOSALTASK__
 #define __WASTEDISPOSALTASK__
 
-#include <Task.h>
+#include "Task.h"
 #include <State.h>
-#include <MeasureTemperatureTask.h>
+#include "MeasureTemperatureTask.h"
 #include <TemperatureController.h>
 #include <MotionDetector.h>
 #include <DoorController.h>
@@ -15,6 +15,7 @@ extern ButtonPadController* buttonPadController;
 extern MotionDetector* motionDetector;
 extern DoorController* doorController;
 extern LedController* ledController;
+extern TemperatureController* temperatureController;
 
 class WasteDisposalTask: public Task{
     private:

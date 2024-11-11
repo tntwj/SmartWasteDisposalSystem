@@ -1,7 +1,7 @@
 #include "ButtonPadController.h"
 
-#include "EnableInterrupt.h"
-#include "Arduino.h"
+#include <Arduino.h>
+#include <EnableInterrupt.h>
 
 ButtonPadController* instance;
 

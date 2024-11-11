@@ -1,7 +1,7 @@
-#include <WasteReceived.h>
+#include "WasteReceived.h"
 #include <Defines.h>
 #include <WasteDisposalTask.h>
-#include <Idle.h>
+#include "Idle.h"
 
 class WasteReceived: public State {
     private:

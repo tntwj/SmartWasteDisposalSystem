@@ -1,5 +1,5 @@
 #include "PirSensor.h"
-#include "Arduino.h"
+#include <Arduino.h>
 
 PirSensor::PirSensor(int pin) {
     this->pin = pin;

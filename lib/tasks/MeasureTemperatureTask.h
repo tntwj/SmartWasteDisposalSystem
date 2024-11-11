@@ -1,7 +1,7 @@
 #ifndef __MEASURETEMPERATURETASK__
 #define __MEASURETEMPERATURETASK__
 
-#include <Task.h>
+#include "Task.h"
 #include <TemperatureController.h>
 
 extern TemperatureController* tempController;

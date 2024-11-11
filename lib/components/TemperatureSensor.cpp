@@ -1,5 +1,5 @@
 #include "TemperatureSensor.h"
-#include "Arduino.h"
+#include <Arduino.h>
 
 TemperatureSensor::TemperatureSensor(int pin) {
     this->pin = pin;
