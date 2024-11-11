@@ -30,9 +30,10 @@ class MsgServiceClass {
         Msg* receiveMsg(Pattern& pattern);
         void sendMsg(const Msg& msg);
         void sendMsg(const String& msg);
-    private:
         Msg* currentMsg;
         bool msgAvailable;
 };
+
+extern MsgServiceClass MsgService;
 
 #endif
