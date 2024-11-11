@@ -16,9 +16,6 @@ void setup() {
   sched.init(50);
 
   /*creating tasks and add to scheduler*/
-  /**
-   * YOU NEED TO DECLARE THE CONSTRUCTOR IN THE HEADER!!!
-   */
   Task* measureLevel = new MeasureLevelTask();
   measureLevel->init(MEASURE_LEVEL_PERIOD);
   sched.addTask(measureLevel);

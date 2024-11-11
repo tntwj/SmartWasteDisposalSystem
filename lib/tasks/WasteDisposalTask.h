@@ -11,14 +11,11 @@
 #include "Defines.h"
 #include <Pins.h>
 
-/**
- * PUT THEM AS EXTERN AND DECLARE THEM IN MAIN"!!!!
- */
 /**controllers as global because every state should use controllers to act/verify events */
-ButtonPadController* buttonPadController = new ButtonPadController(new ButtonImpl(OPEN_BUTTON_PIN), new ButtonImpl(CLOSE_BUTTON_PIN));
-MotionDetector* motionDetector = new MotionDetector(new PirSensor(PIR_SENSOR_PIN));
-DoorController* doorController = new DoorController(new Servo());
-LedController* ledController = new LedController(new Led(GREEN_LED_PIN), new Led(RED_LED_PIN));
+extern ButtonPadController* buttonPadController;
+extern MotionDetector* motionDetector;
+extern DoorController* doorController;
+extern LedController* ledController;
 
 
 class WasteDisposalTask: public Task{

@@ -1,20 +1,19 @@
 #include <Arduino.h>
 #include "Pins.h"
 #include <ButtonPadController.h>
+#include "LedController.h" // To be removed
 
 /**
  * Use the following command in PlatformIO terminal:
  * pio run -t upload -e buttons && pio device monitor
  */
 
-ButtonPadController* buttonPadController;
+ButtonPadController* buttonPadController = new ButtonPadController(OPEN_BUTTON_PIN, CLOSE_BUTTON_PIN);
 
 void setup() {
     Serial.begin(9600);
     Serial.println("### This is a ButtonPadController test ###");
-    buttonPadController = new ButtonPadController(new ButtonImpl(OPEN_BUTTON_PIN), new ButtonImpl(CLOSE_BUTTON_PIN));
-    Serial.println("OPEN pressed?: " + String(buttonPadController->isOpenPressed()));
-    Serial.println("CLOSE pressed?: " + String(buttonPadController->isClosePressed()));
+    buttonPadController->init();
     Serial.println("### End of setup ###");
 }
 
@@ -25,5 +24,5 @@ void loop() {
     if (buttonPadController->isClosePressed()) {
         Serial.println("CLOSE pressed!");
     }
-    delay(50);
+    delay(1000);
 }

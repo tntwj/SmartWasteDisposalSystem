@@ -4,7 +4,9 @@
 #include "TemperatureController.h"
 #include "Pins.h"
 #include "Defines.h"
-TemperatureController* tempController = new TemperatureController(new TemperatureSensor(TEMP_SENSOR_PIN), TEMPERATURE_THRESHOLD);
+
+extern TemperatureController* tempController;
+
 class MeasureTemperatureTask: public Task {
 
     public:

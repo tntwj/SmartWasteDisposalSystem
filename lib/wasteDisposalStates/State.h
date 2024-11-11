@@ -1,5 +1,6 @@
 #ifndef __STATE__
 #define __STATE__
+
 #include "WasteDisposalTask.h"
 
 class State{
