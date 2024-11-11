@@ -1,7 +1,7 @@
 #include <Arduino.h>
-#include "Pins.h"
-#include "Defines.h"
-#include "TemperatureController.h"
+#include "headers/Pins.h"
+#include "headers/Defines.h"
+#include "controllers/TemperatureController.h"
 
 /**
  * Use the following command in PlatformIO terminal:

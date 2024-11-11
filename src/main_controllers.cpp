@@ -1,12 +1,12 @@
 #include <Arduino.h>
-#include <Pins.h>
-#include <Defines.h>
-#include <ButtonPadController.h>
-#include <DoorController.h>
-#include <MotionDetector.h>
-#include <TemperatureController.h>
-#include <WasteDetector.h>
-#include <LedController.h>
+#include "headers/Pins.h"
+#include "headers/Defines.h"
+#include "controllers/ButtonPadController.h"
+#include "controllers/DoorController.h"
+#include "controllers/MotionDetector.h"
+#include "controllers/TemperatureController.h"
+#include "controllers/WasteDetector.h"
+#include "controllers/LedController.h"
 
 /**
  * Use the following command in PlatformIO terminal:

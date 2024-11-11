@@ -1,6 +1,6 @@
 #include <Arduino.h>
-#include "LedController.h"
-#include "Pins.h"
+#include "controllers/LedController.h"
+#include "headers/Pins.h"
 
 /**
  * Use the following command in PlatformIO terminal:

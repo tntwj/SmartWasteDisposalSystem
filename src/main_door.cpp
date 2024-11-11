@@ -1,7 +1,6 @@
 #include <Arduino.h>
-#include "Pins.h"
-#include <LedController.h> //To be removed
-#include <DoorController.h>
+#include "headers/Pins.h"
+#include "controllers/DoorController.h"
 
 /**
  * Use the following command in PlatformIO terminal:

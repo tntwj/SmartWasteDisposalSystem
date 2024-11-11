@@ -3,8 +3,6 @@
 
 #include <Arduino.h>
 
-extern MsgServiceClass MsgService;
-
 class Msg {
     public:
         Msg(String content) {
@@ -14,7 +12,6 @@ class Msg {
         String getContent() {
             return this->content;
         }
-
     private:
         String content;
 };

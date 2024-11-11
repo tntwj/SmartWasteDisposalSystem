@@ -1,7 +1,7 @@
 #include "ContainerFull.h"
-#include <Defines.h>
-#include <WasteDisposalTask.h>
-#include <SleepState.h>
+#include <headers/Defines.h>
+#include "tasks/WasteDisposalTask.h"
+#include "SleepState.h"
 
 class ContainerFull: public State {
     private:

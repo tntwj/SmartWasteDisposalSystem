@@ -1,6 +1,6 @@
 #include "WasteReceived.h"
-#include <Defines.h>
-#include <WasteDisposalTask.h>
+#include "headers/Defines.h"
+#include "tasks/WasteDisposalTask.h"
 #include "Idle.h"
 
 class WasteReceived: public State {

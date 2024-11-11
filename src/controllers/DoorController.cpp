@@ -1,6 +1,6 @@
 #include "DoorController.h"
 #include <Arduino.h>
-#include <Defines.h>
+#include "headers/Defines.h"
 
 DoorController::DoorController(Servo* actuator) {
     this->servo = actuator;

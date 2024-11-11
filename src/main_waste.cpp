@@ -1,7 +1,7 @@
 #include <Arduino.h>
-#include "Pins.h"
-#include "Defines.h"
-#include "WasteDetector.h"
+#include "headers/Pins.h"
+#include "headers/Defines.h"
+#include "controllers/WasteDetector.h"
 
 /**
  * Use the following command in PlatformIO terminal:

@@ -1,7 +1,7 @@
 #ifndef __WASTE_DETECTOR__
 #define __WASTE_DETECTOR__
 
-#include <UltraSoundProxy.h>
+#include <components/UltraSoundProxy.h>
 
 class WasteDetector {
     public:

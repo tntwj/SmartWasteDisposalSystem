@@ -3,7 +3,8 @@
 static const String INIT_MESSAGE = "ArduinoUno";
 
 String content;
-MsgServiceClass MsgService;
+
+extern MsgServiceClass MsgService;
 
 bool MsgServiceClass::isMsgAvailable() {
     return this->msgAvailable;

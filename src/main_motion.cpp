@@ -1,6 +1,6 @@
 #include <Arduino.h>
-#include "Pins.h"
-#include "MotionDetector.h"
+#include "headers/Pins.h"
+#include "controllers/MotionDetector.h"
 
 /**
  * Use the following command in PlatformIO terminal:

@@ -2,7 +2,7 @@
 #define __MEASURELEVELTASK__
 
 #include "Task.h"
-#include <WasteDetector.h>
+#include "controllers/WasteDetector.h"
 
 extern WasteDetector* wasteDetector;
 

@@ -1,15 +1,15 @@
 #include <Arduino.h>
-#include <ButtonPadController.h>
-#include <MotionDetector.h>
-#include <TemperatureController.h>
-#include <DoorController.h>
-#include <WasteDetector.h>
-#include <Pins.h>
-#include <Defines.h>
-#include <Scheduler.h>
-#include <MeasureLevelTask.h>
-#include <MeasureTemperatureTask.h>
-#include <WasteDisposalTask.h>
+#include "controllers/ButtonPadController.h"
+#include "controllers/MotionDetector.h"
+#include "controllers/TemperatureController.h"
+#include "controllers/DoorController.h"
+#include "controllers/WasteDetector.h"
+#include "headers/Pins.h"
+#include "headers/Defines.h"
+#include "scheduler/Scheduler.h"
+#include "tasks/MeasureLevelTask.h"
+#include "tasks/MeasureTemperatureTask.h"
+#include "tasks/WasteDisposalTask.h"
 
 ButtonPadController* buttonPadController;
 DoorController* doorController;

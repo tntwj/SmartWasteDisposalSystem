@@ -1,9 +1,9 @@
 #include "EnteringWaste.h"
-#include <Defines.h>
-#include <WasteDisposalTask.h>
+#include "headers/Defines.h"
+#include "tasks/WasteDisposalTask.h"
 #include "ContainerFull.h"
 #include "WasteReceived.h"
-#include <MeasureLevelTask.h>
+#include "tasks/MeasureLevelTask.h"
 
 class EnteringWaste: public State {
     private:
