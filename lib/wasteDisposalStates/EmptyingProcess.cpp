@@ -1,5 +1,7 @@
-#include "EmptyingProcess.h"
-#include "Idle.h"
+#include <EmptyingProcess.h>
+#include <Defines.h>
+#include <WasteDisposalTask.h>
+#include <Idle.h>
 
 class EmptyingProcess: public State {
     private:

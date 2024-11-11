@@ -1,7 +1,11 @@
-#include "EnteringWaste.h"
-#include "Defines.h"
+#include <EnteringWaste.h>
+#include <Defines.h>
+#include <WasteDisposalTask.h>
+#include <ContainerFull.h>
+#include <WasteReceived.h>
+#include <MeasureLevelTask.h>
 
-class EnteringWaste: public State{
+class EnteringWaste: public State {
     private:
         int count = 0;
         int limit = ENTERING_WASTE_PERIOD / WASTE_DISPOSAL_TASK_PERIOD;

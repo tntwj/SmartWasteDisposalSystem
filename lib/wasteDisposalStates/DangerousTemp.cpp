@@ -1,4 +1,6 @@
-#include "DangerousTemp.h"
+#include <DangerousTemp.h>
+#include <WasteDisposalTask.h>
+#include <MeasureTemperatureTask.h>
 
 class DangerousTemp: public State {
     DangerousTemp() {

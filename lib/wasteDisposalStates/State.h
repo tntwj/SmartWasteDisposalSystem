@@ -1,9 +1,7 @@
 #ifndef __STATE__
 #define __STATE__
 
-#include "WasteDisposalTask.h"
-
-class State{
+class State {
     public:
         /**
          * every state should do his own job.

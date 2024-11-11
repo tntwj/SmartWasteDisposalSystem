@@ -1,5 +1,4 @@
-#include "MeasureLevelTask.h"
-#include "WasteDisposalTask.h"
+#include <MeasureLevelTask.h>
 
 void MeasureLevelTask::tick() {
     wasteDetector->readLevel();

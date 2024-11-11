@@ -1,4 +1,8 @@
-#include "Idle.h"
+#include <Idle.h>
+#include <EnteringWaste.h>
+#include <SleepState.h>
+#include <Defines.h>
+#include <WasteDisposalTask.h>
 
 class Idle: public State {
     private:

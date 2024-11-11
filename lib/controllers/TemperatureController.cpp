@@ -1,5 +1,5 @@
-#include "TemperatureController.h"
-#include "Defines.h"
+#include <TemperatureController.h>
+#include <Defines.h>
 
 TemperatureController::TemperatureController(TemperatureSensor* sensor, int tempThreshold) {
     this->tempSensor = sensor;

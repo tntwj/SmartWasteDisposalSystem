@@ -1,9 +1,7 @@
 #ifndef __IDLE__
 #define __IDLE__
 
-#include "State.h"
-#include "EnteringWaste.h"
-#include "SleepState.h"
+#include <State.h>
 
 class Idle : public State {
     public:

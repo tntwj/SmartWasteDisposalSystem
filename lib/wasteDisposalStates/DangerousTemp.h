@@ -1,7 +1,7 @@
 #ifndef __DANGEROUSTEMP__
 #define __DANGEROUSTEMP__
-#include "State.h"
-#include "MeasureTemperatureTask.h"
+
+#include <State.h>
 
 class DangerousTemp: public State {
     public:
