@@ -3,7 +3,7 @@
 #include "EnableInterrupt.h"
 #include "Arduino.h"
 
-static ButtonPadController* instance;
+ButtonPadController* instance;
 
 /**
  * Only one ButtonPadController may exist at any time due to the interrupt constraints.
