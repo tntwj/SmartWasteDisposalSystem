@@ -3,17 +3,15 @@
 #include "Idle.h"
 #include "ContainerFull.h"
 
-class SleepState: public State {
-    SleepState() {
-        //sleep
+SleepState::SleepState() {
+    //sleep
+}
+State* SleepState::handle() {
+    if (motionDetector->hasDetected() && ledController->isGreenOn()) {
+        return new Idle();
     }
-    State* handle() override {
-        if (motionDetector->hasDetected() && ledController->isGreenOn()) {
-            return new Idle();
-        }
-        if (motionDetector->hasDetected() && ledController->isRedOn()) {
-            return new ContainerFull();
-        }
-        return nullptr;
+    if (motionDetector->hasDetected() && ledController->isRedOn()) {
+        return new ContainerFull();
     }
-};
+    return nullptr;
+}
