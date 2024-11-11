@@ -4,8 +4,12 @@
 #include "Idle.h"
 
 EmptyingProcess::EmptyingProcess() {
-        doorController->openBack();
-    }
+}
+
+void EmptyingProcess::init() {
+    doorController->openBack();
+}
+
 State* EmptyingProcess::handle() {
     count++;
     if (count > limit) {

@@ -6,8 +6,11 @@
 #include "tasks/MeasureLevelTask.h"
 
 EnteringWaste::EnteringWaste() {
-        doorController->openFront();
-    }
+}
+
+void EnteringWaste::init() {
+    doorController->openFront();
+}
 
 State* EnteringWaste::handle() {
     count++;

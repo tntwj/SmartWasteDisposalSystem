@@ -6,6 +6,11 @@
 SleepState::SleepState() {
     //sleep
 }
+
+void SleepState::init() {
+
+}
+
 State* SleepState::handle() {
     if (motionDetector->hasDetected() && ledController->isGreenOn()) {
         return new Idle();

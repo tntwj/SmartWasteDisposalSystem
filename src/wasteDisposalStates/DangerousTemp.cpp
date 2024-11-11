@@ -3,6 +3,9 @@
 #include "tasks/MeasureTemperatureTask.h"
 
 DangerousTemp::DangerousTemp() {
+}
+
+void DangerousTemp::init() {
     ledController->switchOffGreen();
     ledController->switchOnRed();
     doorController->close();

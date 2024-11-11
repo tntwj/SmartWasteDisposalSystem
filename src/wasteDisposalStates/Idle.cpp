@@ -5,6 +5,9 @@
 #include "tasks/WasteDisposalTask.h"
 
 Idle::Idle() {
+}
+
+void Idle::init() {
     ledController->switchOnGreen();
 }
 

@@ -12,6 +12,7 @@ class WasteReceived : public State {
     int limit = WASTE_RECEIVED_PERIOD / WASTE_DISPOSAL_TASK_PERIOD;
     public:
         WasteReceived();
+        void init() override;
         State* handle() override;
 };
 

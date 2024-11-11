@@ -13,6 +13,7 @@ class Idle : public State {
     int limit = AWAKE_PERIOD / WASTE_DISPOSAL_TASK_PERIOD;
     public:
         Idle();
+        void init() override;
         State* handle() override;
 };
 

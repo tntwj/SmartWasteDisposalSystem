@@ -3,10 +3,14 @@
 #include "SleepState.h"
 
 ContainerFull::ContainerFull() {
-        ledController->switchOffGreen();
-        ledController->switchOnRed();
-        doorController->close();
-    }
+}
+
+void ContainerFull::init() {
+    ledController->switchOffGreen();
+    ledController->switchOnRed();
+    doorController->close();
+}
+
 State* ContainerFull::handle() {
     count++;
     if (count > limit) {

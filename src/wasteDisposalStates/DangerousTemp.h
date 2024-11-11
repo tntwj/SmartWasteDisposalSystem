@@ -6,6 +6,7 @@
 class DangerousTemp: public State {
     public:
         DangerousTemp();
+        void init() override;
         State* handle() override;
 };
 

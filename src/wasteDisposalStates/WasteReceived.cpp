@@ -4,8 +4,12 @@
 #include "Idle.h"
 
 WasteReceived::WasteReceived() {
-        doorController->close();
-    }
+}
+
+void WasteReceived::init() {
+    doorController->close();
+}
+
 State* WasteReceived::handle() {
     count++;
     if (count > limit) {

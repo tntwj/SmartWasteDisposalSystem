@@ -10,6 +10,7 @@ class EnteringWaste : public State {
     int limit = ENTERING_WASTE_PERIOD / WASTE_DISPOSAL_TASK_PERIOD;
     public:
         EnteringWaste();
+        void init() override;
         State* handle() override;
 };
 

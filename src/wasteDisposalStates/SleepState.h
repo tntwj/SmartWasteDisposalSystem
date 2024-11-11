@@ -6,6 +6,7 @@
 class SleepState: public State {
     public:
         SleepState();
+        void init() override;
         State* handle() override;
 };
 

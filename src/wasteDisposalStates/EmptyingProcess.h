@@ -12,6 +12,7 @@ class EmptyingProcess : public State {
     int limit = EMPTYING_PROCESS / WASTE_DISPOSAL_TASK_PERIOD;
     public:
         EmptyingProcess();
+        void init() override;
         State* handle() override;
 };
 
