@@ -9,8 +9,8 @@ static int pirPin = 0;
 void setupButtons(int openPin, int closePin) {
     pinMode(openPin, INPUT);
     pinMode(closePin, INPUT);
-    enableInterrupt(openPin, openButtonISR, HIGH);
-    enableInterrupt(closePin, closeButtonISR, HIGH);
+    enableInterrupt(openPin, openButtonISR, RISING);
+    enableInterrupt(closePin, closeButtonISR, RISING);
 }
 
 void openButtonISR() {
