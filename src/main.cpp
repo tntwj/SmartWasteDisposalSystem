@@ -29,14 +29,14 @@ String stateMsg;
 
 void setup() {
     MsgService.init();
-	setupButtons(OPEN_BUTTON_PIN, CLOSE_BUTTON_PIN);
-	setupMotionSensor(PIR_SENSOR_PIN);
+	setupButtons(OPEN_PIN, CLOSE_PIN);
+	setupMotionSensor(PIR_PIN);
     ServoTimer2* servo = new ServoTimer2();
     servo->attach(SERVO_PIN);
     doorController = new DoorController(servo);
-    motionDetector = new MotionDetector(new PirSensor(PIR_SENSOR_PIN));
-    tempController = new TemperatureController(new TemperatureSensor(TEMP_SENSOR_PIN), TEMPERATURE_THRESHOLD);
-    wasteDetector = new WasteDetector(new UltraSoundProxy(ULTRA_SOUND_TRIG_PIN, ULTRA_SOUND_ECHO_PIN), MAX_WASTE_LEVEL, MIN_WASTE_LEVEL);
+    motionDetector = new MotionDetector(new PirSensor(PIR_PIN));
+    tempController = new TemperatureController(new TemperatureSensor(TEMP_PIN), TEMP_THRESHOLD);
+    wasteDetector = new WasteDetector(new UltraSoundProxy(TRIG_PIN, ECHO_PIN), MAX_WASTE_DISTANCE, MIN_WASTE_DISTANCE);
     ledController = new LedController(new Led(GREEN_LED_PIN), new Led(RED_LED_PIN));
 
 

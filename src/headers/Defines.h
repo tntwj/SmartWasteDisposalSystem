@@ -6,9 +6,9 @@
 #define FRONT_DOOR_OPEN_ANGLE 2250
 #define SWEEP_TIME 200 //Optimal for the SG90. 180 could is the minimum acceptable.
 
-#define TEMPERATURE_THRESHOLD 40
-#define MAX_WASTE_LEVEL 0.5f
-#define MIN_WASTE_LEVEL 0.05f
+#define TEMP_THRESHOLD 40
+#define MAX_WASTE_DISTANCE 0.5f
+#define MIN_WASTE_DISTANCE 0.05f
 
 #define SCHEDULE_PERIOD 50
 #define MEASURE_LEVEL_PERIOD 50
