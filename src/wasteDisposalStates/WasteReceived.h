@@ -4,7 +4,7 @@
 #include "headers/Defines.h"
 #include "State.h"
 #include "controllers/DoorController.h"
-#include "LiquidCrystal_I2C.h"
+#include <LiquidCrystal_I2C.h>
 
 extern DoorController* doorController;
 extern String stateMsg;

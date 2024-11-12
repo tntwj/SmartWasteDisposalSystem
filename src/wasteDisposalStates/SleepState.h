@@ -3,10 +3,10 @@
 
 #include "State.h"
 #include "controllers/MotionDetector.h"
-#include "LiquidCrystal_I2C.h"
+#include <LiquidCrystal_I2C.h>
 
 extern String stateMsg;
-extern bool movementDetected;
+extern MotionDetector* motionDetector;
 extern LiquidCrystal_I2C* lcd;
 
 class SleepState: public State {

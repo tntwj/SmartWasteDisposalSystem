@@ -4,7 +4,7 @@
 #include "State.h"
 #include "headers/Defines.h"
 #include "controllers/WasteDetector.h"
-#include "LiquidCrystal_I2C.h"
+#include <LiquidCrystal_I2C.h>
 
 extern WasteDetector* wasteDetector;
 extern bool openPressed;

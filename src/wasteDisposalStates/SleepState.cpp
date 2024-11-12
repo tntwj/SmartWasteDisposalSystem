@@ -15,13 +15,16 @@ void SleepState::init() {
     lcd->clear();
     lcd->noBacklight();
     lcd->noDisplay();
+
+    // Enable interrupt on pir pin when the tension rises to wake up.
+    // Needs a pir state machine
 }
 
 State* SleepState::handle() {
-    if (movementDetected && ledController->isGreenOn()) {
+    if (motionDetector->hasDetected() && ledController->isGreenOn()) {
         return new Idle();
     }
-    if (movementDetected && ledController->isRedOn()) {
+    if (motionDetector->hasDetected() && ledController->isRedOn()) {
         return new ContainerFull();
     }
     return nullptr;

@@ -30,7 +30,6 @@ String stateMsg;
 void setup() {
     MsgService.init();
 	setupButtons(OPEN_PIN, CLOSE_PIN);
-	setupMotionSensor(PIR_PIN);
     ServoTimer2* servo = new ServoTimer2();
     servo->attach(SERVO_PIN);
     doorController = new DoorController(servo);
@@ -38,7 +37,6 @@ void setup() {
     tempController = new TemperatureController(new TemperatureSensor(TEMP_PIN), TEMP_THRESHOLD);
     wasteDetector = new WasteDetector(new UltraSoundProxy(TRIG_PIN, ECHO_PIN), MAX_WASTE_DISTANCE, MIN_WASTE_DISTANCE);
     ledController = new LedController(new Led(GREEN_LED_PIN), new Led(RED_LED_PIN));
-
 
 	lcd = new LiquidCrystal_I2C(0x27, 16, 2);
 	lcd->init();

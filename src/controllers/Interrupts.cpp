@@ -4,8 +4,6 @@
 #include <EnableInterrupt.h>
 #include "headers/Pins.h"
 
-static int pirPin = 0;
-
 void setupButtons(int openPin, int closePin) {
     pinMode(openPin, INPUT);
     pinMode(closePin, INPUT);
@@ -19,15 +17,5 @@ void openButtonISR() {
 
 void closeButtonISR() {
     closePressed = true;
-}
-
-void setupMotionSensor(int pin) {
-    pirPin = pin;
-    pinMode(pin, INPUT);
-    enableInterrupt(pin, pirISR, HIGH);
-}
-
-void pirISR() {
-    movementDetected = true;
 }
 

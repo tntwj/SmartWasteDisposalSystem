@@ -5,7 +5,7 @@
 #include "controllers/LedController.h"
 #include "controllers/DoorController.h"
 #include "controllers/TemperatureController.h"
-#include "LiquidCrystal_I2C.h"
+#include <LiquidCrystal_I2C.h>
 
 extern LedController* ledController;
 extern DoorController* doorController;

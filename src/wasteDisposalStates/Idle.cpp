@@ -24,8 +24,8 @@ State* Idle::handle() {
         openPressed = false;
         return new EnteringWaste();
     }
-    Serial.println("Movemente detected " + String(movementDetected));
-    if (movementDetected) {
+    Serial.println("Movemente detected " + String(motionDetector->hasDetected()));
+    if (motionDetector->hasDetected()) {
         currentTime = millis();
     }
     if (millis() - currentTime >= AWAKE_PERIOD) {
