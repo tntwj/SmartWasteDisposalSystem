@@ -11,6 +11,8 @@
 #include "tasks/MeasureLevelTask.h"
 #include "tasks/MeasureTemperatureTask.h"
 #include "tasks/WasteDisposalTask.h"
+#include "LiquidCrystal_I2C.h"
+#include "communication/MsgService.h"
 
 ButtonPadController* buttonPadController;
 DoorController* doorController;
@@ -18,9 +20,11 @@ MotionDetector* motionDetector;
 TemperatureController* tempController;
 WasteDetector* wasteDetector;
 LedController* ledController;
+LiquidCrystal_I2C* lcd = new LiquidCrystal_I2C(0x27, 16, 2);
 Scheduler sched;
 
 void setup() {
+    MsgService.init();
     buttonPadController = new ButtonPadController(OPEN_BUTTON_PIN, CLOSE_BUTTON_PIN);
     PWMServo* servo = new PWMServo();
     servo->attach(SERVO_PIN);
@@ -29,12 +33,9 @@ void setup() {
     tempController = new TemperatureController(new TemperatureSensor(TEMP_SENSOR_PIN), TEMPERATURE_THRESHOLD);
     wasteDetector = new WasteDetector(new UltraSoundProxy(ULTRA_SOUND_ECHO_PIN, ULTRA_SOUND_TRIG_PIN), MAX_WASTE_LEVEL, MIN_WASTE_LEVEL);
     ledController = new LedController(new Led(GREEN_LED_PIN), new Led(RED_LED_PIN));
+	lcd->init();
+	lcd->backlight();
 
-    /**
-     * Reminder that Serial.Begin() is later called in MsgService
-     */
-    Serial.begin(9600);
-    Serial.println("ArduinoUno");
     sched.init(50);
 
     /*creating tasks and add to scheduler*/

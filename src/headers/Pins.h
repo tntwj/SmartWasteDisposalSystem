@@ -7,8 +7,8 @@
 #define RED_LED_PIN 6
 #define ULTRA_SOUND_ECHO_PIN 7
 #define ULTRA_SOUND_TRIG_PIN 8
-#define OPEN_BUTTON_PIN 12
 #define CLOSE_BUTTON_PIN 11
+#define OPEN_BUTTON_PIN 12
 #define TEMP_SENSOR_PIN 14 //equivalent of A0
 
 #endif
