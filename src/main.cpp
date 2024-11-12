@@ -36,6 +36,7 @@ void setup() {
     wasteDetector = new WasteDetector(new UltraSoundProxy(ULTRA_SOUND_ECHO_PIN, ULTRA_SOUND_TRIG_PIN), MAX_WASTE_LEVEL, MIN_WASTE_LEVEL);
     ledController = new LedController(new Led(GREEN_LED_PIN), new Led(RED_LED_PIN));
 
+
 	lcd = new LiquidCrystal_I2C(0x27, 16, 2);
 	lcd->init();
 	lcd->backlight();

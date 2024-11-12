@@ -2,13 +2,13 @@
 #include "EnteringWaste.h"
 #include "SleepState.h"
 #include "headers/Defines.h"
-#include <Arduino.h>
 
 Idle::Idle() {
 }
 
 void Idle::init() {
-    Serial.print("State Idle");
+    Serial.println("State Idle");
+    currentTime = millis();
     ledController->switchOnGreen();
 }
 
@@ -17,12 +17,13 @@ State* Idle::handle() {
     Serial.println("is pressed" + String(openPressed));
     Serial.println("is close pressed" + String(closePressed));
     if (isOpenPressed) {
+        isOpenPressed = false;
         return new EnteringWaste();
     }
-    count++;
-    Serial.println(count);
-    if (count > limit) {
-        count = 0;
+    if (motionDetector->hasDetected()) {
+        currentTime = millis();
+    }
+    if (millis() - currentTime >= AWAKE_PERIOD) {
         return new SleepState();
     }
     return nullptr;

@@ -5,7 +5,7 @@
 #include <Arduino.h>
 
 EnteringWaste::EnteringWaste() {
-    Serial.print("Entering Waste");
+    Serial.println("Entering Waste");
 }
 
 void EnteringWaste::init() {
@@ -13,13 +13,10 @@ void EnteringWaste::init() {
 }
 
 State* EnteringWaste::handle() {
-    count++;
     if (wasteDetector->getLevel() >= MAX_WASTE_LEVEL) {
-        count = 0;
         return new ContainerFull();
     }
-    if (openPressed || count >= limit) {
-        count = 0;
+    if (openPressed || millis() - currentTime >= ENTERING_WASTE_PERIOD) {
         return new WasteReceived();
     }
     return nullptr;
