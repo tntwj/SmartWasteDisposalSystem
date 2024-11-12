@@ -13,8 +13,11 @@ void Idle::init() {
 }
 
 State* Idle::handle() {
-    bool isOpenPressed = buttonPadController->isOpenPressed();
+    bool isOpenPressed = openPressed;
+    Serial.println("is pressed" + String(openPressed));
+    Serial.println("is close pressed" + String(closePressed));
     if (isOpenPressed) {
+        isOpenPressed = false;
         return new EnteringWaste();
     }
     if (motionDetector->hasDetected()) {

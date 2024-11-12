@@ -11,7 +11,6 @@
 #include "wasteDisposalStates/Idle.h"
 
 /**controllers as global because every state should use controllers to act/verify events */
-extern ButtonPadController* buttonPadController;
 extern MotionDetector* motionDetector;
 extern DoorController* doorController;
 extern LedController* ledController;

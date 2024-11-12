@@ -7,7 +7,7 @@
 #include "controllers/ButtonPadController.h"
 
 extern WasteDetector* wasteDetector;
-extern ButtonPadController* buttonPadController;
+extern bool openPressed;
 
 class EnteringWaste : public State {
     private:
