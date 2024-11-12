@@ -18,7 +18,7 @@ State* EnteringWaste::handle() {
         count = 0;
         return new ContainerFull();
     }
-    if (buttonPadController->isClosePressed() || count >= limit) {
+    if (openPressed || count >= limit) {
         count = 0;
         return new WasteReceived();
     }
