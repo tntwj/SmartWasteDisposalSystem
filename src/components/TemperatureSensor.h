@@ -1,5 +1,5 @@
-#ifndef __TEMPERATURE_SENSOR__
-#define __TEMPERATURE_SENSOR__
+#ifndef __TEMP_SENSOR__
+#define __TEMP_SENSOR__
 
 class TemperatureSensor {
     public:

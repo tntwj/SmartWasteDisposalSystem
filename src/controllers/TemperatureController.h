@@ -1,5 +1,5 @@
-#ifndef __TEMPERATURE_CONTROLLER__
-#define __TEMPERATURE_CONTROLLER__
+#ifndef __TEMP_CONTROLLER__
+#define __TEMP_CONTROLLER__
 
 #include "components/TemperatureSensor.h"
 

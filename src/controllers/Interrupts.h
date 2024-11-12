@@ -1,5 +1,5 @@
-#ifndef __BUTTON_PAD_CONTROLLER__
-#define __BUTTON_PAD_CONTROLLER__
+#ifndef __SYSTEM_INTERRUPTS__
+#define __SYSTEM_INTERRUPTS__
 
 extern bool openPressed;
 extern bool closePressed;
