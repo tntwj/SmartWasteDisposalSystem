@@ -1,9 +1,9 @@
 #ifndef __DEFINES__
 #define __DEFINES__
 
-#define BACK_DOOR_OPEN_ANGLE 180
-#define DOOR_CLOSED_ANGLE 90
-#define FRONT_DOOR_OPEN_ANGLE 0
+#define BACK_DOOR_OPEN_ANGLE 750
+#define DOOR_CLOSED_ANGLE 1500
+#define FRONT_DOOR_OPEN_ANGLE 2250
 #define SWEEP_TIME 200 //Optimal for the SG90. 180 could is the minimum acceptable.
 
 #define TEMPERATURE_THRESHOLD 40

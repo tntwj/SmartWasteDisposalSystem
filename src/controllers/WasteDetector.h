@@ -14,10 +14,10 @@ class WasteDetector {
     
     private:
         UltraSoundProxy* proxySensor;
-        float distance;
+        volatile float distance;
         float maxDistance;
         float minDistance;
-        float wasteLevel;
+        volatile float wasteLevel;
 };
     
 #endif

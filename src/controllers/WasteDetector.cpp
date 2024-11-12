@@ -6,8 +6,8 @@ WasteDetector::WasteDetector(UltraSoundProxy* sensor, float maxDistance, float m
     this->proxySensor = sensor;
     this->maxDistance = maxDistance;
     this->minDistance = minDistance;
-    this->distance = 0.0f;
-    this->wasteLevel = 0.0f;
+    this->distance = 1.0f;
+    this->wasteLevel = 1.0f;
 }
 
 WasteDetector::~WasteDetector() {
