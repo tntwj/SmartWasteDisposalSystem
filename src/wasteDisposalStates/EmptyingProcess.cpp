@@ -9,6 +9,11 @@ void EmptyingProcess::init() {
     stateMsg="EMPTYINGPROCESS";
     Serial.println("emptying");
     doorController->openBack();
+    lcd->clear();
+    lcd->setCursor(0, 0);
+    lcd->print("EMPTYING");
+    lcd->setCursor(1, 0);
+    lcd->print("PROCESS");
 }
 
 State* EmptyingProcess::handle() {

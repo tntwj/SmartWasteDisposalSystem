@@ -9,6 +9,9 @@ void DangerousTemp::init() {
     ledController->switchOffGreen();
     ledController->switchOnRed();
     doorController->close();
+    lcd->clear();
+    lcd->setCursor(0, 0);
+    lcd->print("PROBLEM DETECTED");
 }
 
 State* DangerousTemp::handle() {

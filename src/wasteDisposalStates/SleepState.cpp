@@ -12,6 +12,9 @@ SleepState::SleepState() {
 void SleepState::init() {
     ledController->switchOffGreen();
     ledController->switchOffRed();
+    lcd->clear();
+    lcd->noBacklight();
+    lcd->noDisplay();
 }
 
 State* SleepState::handle() {

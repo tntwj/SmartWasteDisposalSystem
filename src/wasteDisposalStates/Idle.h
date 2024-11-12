@@ -4,10 +4,12 @@
 #include "State.h"
 #include "headers/Defines.h"
 #include "controllers/LedController.h"
+#include "LiquidCrystal_I2C.h"
 
 extern LedController* ledController;
 extern bool movementDetected;
 extern String stateMsg;
+extern LiquidCrystal_I2C* lcd;
 
 class Idle : public State {
     private:

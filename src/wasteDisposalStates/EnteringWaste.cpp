@@ -12,6 +12,11 @@ void EnteringWaste::init() {
     stateMsg="ENTERINGWASTE";
     currentTime = millis();
     doorController->openFront();
+    lcd->clear();
+    lcd->setCursor(0, 0);
+    lcd->print("PRESS CLOSE");
+    lcd->setCursor(1, 0);
+    lcd->print("WHEN DONE");
 }
 
 State* EnteringWaste::handle() {

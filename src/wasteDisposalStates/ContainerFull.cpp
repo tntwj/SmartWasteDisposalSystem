@@ -12,6 +12,9 @@ void ContainerFull::init() {
     ledController->switchOnRed();
     doorController->close();
     currentTime = millis();
+    lcd->clear();
+    lcd->setCursor(0, 0);
+    lcd->print("CONTAINER FULL");
 }
 
 State* ContainerFull::handle() {

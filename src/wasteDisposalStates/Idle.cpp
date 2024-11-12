@@ -11,6 +11,11 @@ void Idle::init() {
     Serial.println("State Idle");
     currentTime = millis();
     ledController->switchOnGreen();
+    lcd->clear();
+    lcd->setCursor(0, 0);
+    lcd->print("PRESS OPEN TO");
+    lcd->setCursor(1, 0);
+    lcd->print("ENTER WASTE");
 }
 
 State* Idle::handle() {
