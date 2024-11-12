@@ -14,7 +14,7 @@ void Idle::init() {
     lcd->clear();
     lcd->setCursor(0, 0);
     lcd->print("PRESS OPEN TO");
-    lcd->setCursor(1, 0);
+    lcd->setCursor(0, 1);
     lcd->print("ENTER WASTE");
 }
 

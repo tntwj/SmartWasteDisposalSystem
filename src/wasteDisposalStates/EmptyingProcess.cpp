@@ -12,7 +12,7 @@ void EmptyingProcess::init() {
     lcd->clear();
     lcd->setCursor(0, 0);
     lcd->print("EMPTYING");
-    lcd->setCursor(1, 0);
+    lcd->setCursor(0, 1);
     lcd->print("PROCESS");
 }
 

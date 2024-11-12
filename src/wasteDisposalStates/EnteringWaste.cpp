@@ -15,7 +15,7 @@ void EnteringWaste::init() {
     lcd->clear();
     lcd->setCursor(0, 0);
     lcd->print("PRESS CLOSE");
-    lcd->setCursor(1, 0);
+    lcd->setCursor(0, 1);
     lcd->print("WHEN DONE");
 }
 
