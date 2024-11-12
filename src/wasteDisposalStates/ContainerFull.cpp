@@ -5,6 +5,7 @@ ContainerFull::ContainerFull() {
 }
 
 void ContainerFull::init() {
+    Serial.println("container full");
     ledController->switchOffGreen();
     ledController->switchOnRed();
     doorController->close();

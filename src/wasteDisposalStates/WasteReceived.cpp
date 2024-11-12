@@ -6,6 +6,7 @@ WasteReceived::WasteReceived() {
 }
 
 void WasteReceived::init() {
+    Serial.println("waste received");
     doorController->close();
 }
 

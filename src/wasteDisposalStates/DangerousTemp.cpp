@@ -4,6 +4,7 @@ DangerousTemp::DangerousTemp() {
 }
 
 void DangerousTemp::init() {
+    Serial.println("Dangerous temp");
     ledController->switchOffGreen();
     ledController->switchOnRed();
     doorController->close();
