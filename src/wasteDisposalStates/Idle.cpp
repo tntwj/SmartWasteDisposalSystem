@@ -13,10 +13,9 @@ void Idle::init() {
 }
 
 State* Idle::handle() {
-    bool isOpenPressed = openPressed;
     Serial.println("is pressed" + String(openPressed));
-    if (isOpenPressed) {
-        isOpenPressed = false;
+    if (openPressed) {
+        openPressed = false;
         return new EnteringWaste();
     }
     if (motionDetector->hasDetected()) {

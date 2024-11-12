@@ -9,7 +9,8 @@ SleepState::SleepState() {
 }
 
 void SleepState::init() {
-
+    ledController->switchOffGreen();
+    ledController->switchOffRed();
 }
 
 State* SleepState::handle() {
