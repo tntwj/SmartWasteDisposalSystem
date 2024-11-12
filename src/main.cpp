@@ -24,7 +24,7 @@ Scheduler sched;
 
 bool openPressed = false;
 bool closePressed = false;
-bool movementDetected = false;
+
 String stateMsg;
 
 void setup() {
