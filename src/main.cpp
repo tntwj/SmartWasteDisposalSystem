@@ -4,6 +4,7 @@
 #include "controllers/TemperatureController.h"
 #include "controllers/DoorController.h"
 #include "controllers/WasteDetector.h"
+#include "controllers/LedController.h"
 #include "headers/Pins.h"
 #include "headers/Defines.h"
 #include "scheduler/Scheduler.h"
@@ -14,8 +15,9 @@
 ButtonPadController* buttonPadController;
 DoorController* doorController;
 MotionDetector* motionDetector;
-TemperatureController* temperatureController;
+TemperatureController* tempController;
 WasteDetector* wasteDetector;
+LedController* ledController;
 Scheduler sched;
 
 void setup() {
@@ -24,8 +26,9 @@ void setup() {
     servo->attach(SERVO_PIN);
     doorController = new DoorController(servo);
     motionDetector = new MotionDetector(new PirSensor(PIR_SENSOR_PIN));
-    temperatureController = new TemperatureController(new TemperatureSensor(TEMP_SENSOR_PIN), TEMPERATURE_THRESHOLD);
+    tempController = new TemperatureController(new TemperatureSensor(TEMP_SENSOR_PIN), TEMPERATURE_THRESHOLD);
     wasteDetector = new WasteDetector(new UltraSoundProxy(ULTRA_SOUND_ECHO_PIN, ULTRA_SOUND_TRIG_PIN), MAX_WASTE_LEVEL, MIN_WASTE_LEVEL);
+    ledController = new LedController(new Led(GREEN_LED_PIN), new Led(RED_LED_PIN));
 
     /**
      * Reminder that Serial.Begin() is later called in MsgService

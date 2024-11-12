@@ -1,6 +1,7 @@
 #include "WasteDisposalTask.h"
 #include "wasteDisposalStates/DangerousTemp.h"
 
+
 void WasteDisposalTask::tick() {
     State* nextState = nullptr;
     bool isCurrentTempHigh = tempController->isTempHigh();
