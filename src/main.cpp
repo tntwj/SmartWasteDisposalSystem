@@ -15,6 +15,7 @@
 #include "communication/MsgService.h"
 
 DoorController* doorController;
+MotionDetector* motionDetector;
 TemperatureController* tempController;
 WasteDetector* wasteDetector;
 LedController* ledController;
@@ -32,8 +33,9 @@ void setup() {
     PWMServo* servo = new PWMServo();
     servo->attach(SERVO_PIN);
     doorController = new DoorController(servo);
+    motionDetector = new MotionDetector(new PirSensor(PIR_SENSOR_PIN));
     tempController = new TemperatureController(new TemperatureSensor(TEMP_SENSOR_PIN), TEMPERATURE_THRESHOLD);
-    wasteDetector = new WasteDetector(new UltraSoundProxy(ULTRA_SOUND_ECHO_PIN, ULTRA_SOUND_TRIG_PIN), MIN_WASTE_LEVEL, MAX_WASTE_LEVEL);
+    wasteDetector = new WasteDetector(new UltraSoundProxy(ULTRA_SOUND_TRIG_PIN, ULTRA_SOUND_ECHO_PIN), MAX_WASTE_LEVEL, MIN_WASTE_LEVEL);
     ledController = new LedController(new Led(GREEN_LED_PIN), new Led(RED_LED_PIN));
 
 
