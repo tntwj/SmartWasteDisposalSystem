@@ -9,6 +9,7 @@ void WasteReceived::init() {
     stateMsg="WASTERECEIVED";
     Serial.println("waste received");
     doorController->close();
+    currentTime = millis();
 }
 
 State* WasteReceived::handle() {

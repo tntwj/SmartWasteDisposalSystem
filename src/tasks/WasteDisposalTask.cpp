@@ -14,21 +14,21 @@ void WasteDisposalTask::tick() {
         currentState = nextState;
         currentState->init();
     }
-    if (isCurrentTempHigh) {
-        isPrevTempHigh = isCurrentTempHigh;
-        stateBeforeHighTemp = currentState;
-        currentState = new DangerousTemp();
-    }
     /**
      * se avviene lo switch dalla temperatura alta alla temperatura bassa, stateBeforeHighTemp 
-     * serve nel caso in cui la temperatura tornasse normale venga tornato allo stato prima della high temperature.
+     * serve nel caso in cui la temperatura tornasse normale oppure operatore clicca bottone "restore" 
+     * lo stato venga tornato allo stato prima della high temperature.
+     * else if avviene quando c'è lo switch da uno stato qualsiasi alla temperatura alta.
     */
-    if (isPrevTempHigh && !isCurrentTempHigh) {
+    if ((isPrevTempHigh && !isCurrentTempHigh) || (isCurrentTempHigh && stateMsg == "RESTORE")) {
         delete currentState;
         currentState = stateBeforeHighTemp;
         currentState->init();
         isPrevTempHigh = false;
     } else if (!isPrevTempHigh && isCurrentTempHigh) {
+        isPrevTempHigh = isCurrentTempHigh;
+        stateBeforeHighTemp = currentState;
+        currentState = new DangerousTemp();
         currentState->init();
     }
 }
