@@ -30,7 +30,7 @@ void setup() {
     MsgService.init();
 	setupButtons(OPEN_BUTTON_PIN, CLOSE_BUTTON_PIN);
 	setupMotionSensor(PIR_SENSOR_PIN);
-    PWMServo* servo = new PWMServo();
+    ServoTimer2* servo = new ServoTimer2();
     servo->attach(SERVO_PIN);
     doorController = new DoorController(servo);
     motionDetector = new MotionDetector(new PirSensor(PIR_SENSOR_PIN));

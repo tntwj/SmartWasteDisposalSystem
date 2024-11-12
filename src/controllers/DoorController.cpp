@@ -2,10 +2,9 @@
 #include <Arduino.h>
 #include "headers/Defines.h"
 
-DoorController::DoorController(PWMServo* actuator) {
+DoorController::DoorController(ServoTimer2* actuator) {
     this->servo = actuator;
     this->servo->write(DOOR_CLOSED_ANGLE);
-    delay(SWEEP_TIME);
     this->currentDoorState = DOOR_CLOSED;
 }
 
@@ -19,7 +18,6 @@ DoorController::~DoorController() {
 bool DoorController::openFront() {
     if (currentDoorState == DOOR_CLOSED) {
         this->servo->write(FRONT_DOOR_OPEN_ANGLE);
-        delay(SWEEP_TIME);
         this->currentDoorState = FRONT_OPEN;
         return true;
     }
@@ -32,7 +30,6 @@ bool DoorController::openFront() {
 bool DoorController::openBack() {
     if (currentDoorState == DOOR_CLOSED) {
         this->servo->write(BACK_DOOR_OPEN_ANGLE);
-        delay(SWEEP_TIME);
         this->currentDoorState = BACK_OPEN;
         return true;
     }
@@ -46,7 +43,6 @@ bool DoorController::close() {
     if (currentDoorState == BACK_OPEN || currentDoorState == FRONT_OPEN) {
         this->currentDoorState = DOOR_CLOSED;
         this->servo->write(DOOR_CLOSED_ANGLE);
-        delay(SWEEP_TIME);
         return true;
     }
     return false;

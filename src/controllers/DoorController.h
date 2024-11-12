@@ -1,4 +1,4 @@
-#include <PWMServo.h>
+#include <ServoTimer2.h>
 
 #ifndef __DOOR_CONTROLLER__
 #define __DOOR_CONTROLLER__
@@ -9,14 +9,14 @@ enum DoorState {
 
 class DoorController {
     public:
-        DoorController(PWMServo* actuator);
+        DoorController(ServoTimer2* actuator);
         ~DoorController();
         bool openFront();
         bool openBack();
         bool close();
         DoorState getCurrentState();
     private:
-        PWMServo* servo;
+        ServoTimer2* servo;
         DoorState currentDoorState;
 };
 
