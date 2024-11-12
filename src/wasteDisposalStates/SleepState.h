@@ -4,6 +4,7 @@
 #include "State.h"
 #include "controllers/MotionDetector.h"
 
+extern String stateMsg;
 extern bool movementDetected;
 class SleepState: public State {
     public:

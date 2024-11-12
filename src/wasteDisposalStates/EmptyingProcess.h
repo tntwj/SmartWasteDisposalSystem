@@ -8,6 +8,7 @@
 
 extern LedController* ledController;
 extern DoorController* doorController;
+extern String stateMsg;
 
 class EmptyingProcess : public State {
     private:

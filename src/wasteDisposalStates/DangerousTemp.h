@@ -9,6 +9,7 @@
 extern LedController* ledController;
 extern DoorController* doorController;
 extern TemperatureController* tempController;
+extern String stateMsg;
 
 class DangerousTemp: public State {
     public:

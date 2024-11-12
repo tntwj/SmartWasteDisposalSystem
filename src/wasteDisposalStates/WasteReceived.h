@@ -6,7 +6,7 @@
 #include "controllers/DoorController.h"
 
 extern DoorController* doorController;
-
+extern String stateMsg;
 class WasteReceived : public State {
     private:
     unsigned long currentTime;

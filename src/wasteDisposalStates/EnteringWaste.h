@@ -8,6 +8,7 @@
 extern WasteDetector* wasteDetector;
 extern bool openPressed;
 extern bool closePressed;
+extern String stateMsg;
 
 class EnteringWaste : public State {
     private:

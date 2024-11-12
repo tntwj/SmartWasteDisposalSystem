@@ -14,6 +14,7 @@ extern MotionDetector* motionDetector;
 extern DoorController* doorController;
 extern LedController* ledController;
 extern TemperatureController* tempController;
+extern String stateMsg;
 
 class WasteDisposalTask: public Task {
     private:

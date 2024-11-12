@@ -9,6 +9,7 @@ EnteringWaste::EnteringWaste() {
 }
 
 void EnteringWaste::init() {
+    stateMsg="ENTERINGWASTE";
     doorController->openFront();
 }
 

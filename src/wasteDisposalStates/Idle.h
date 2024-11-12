@@ -7,6 +7,7 @@
 
 extern LedController* ledController;
 extern bool movementDetected;
+extern String stateMsg;
 
 class Idle : public State {
     private:

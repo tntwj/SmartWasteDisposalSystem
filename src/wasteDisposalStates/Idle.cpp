@@ -7,6 +7,7 @@ Idle::Idle() {
 }
 
 void Idle::init() {
+    stateMsg = "IDLE";
     Serial.println("State Idle");
     currentTime = millis();
     ledController->switchOnGreen();

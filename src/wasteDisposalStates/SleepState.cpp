@@ -5,6 +5,7 @@
 
 SleepState::SleepState() {
     //sleep
+    stateMsg="SLEEP";
     Serial.println("Sleep");
 }
 
