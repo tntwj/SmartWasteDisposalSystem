@@ -22,8 +22,9 @@ LedController* ledController;
 LiquidCrystal_I2C* lcd;
 Scheduler sched;
 
-bool openPressed;
-bool closePressed;
+bool openPressed = false;
+bool closePressed = false;
+bool movementDetected = true;
 
 void setup() {
     MsgService.init();

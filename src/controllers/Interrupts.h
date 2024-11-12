@@ -3,6 +3,7 @@
 
 extern bool openPressed;
 extern bool closePressed;
+extern bool movementDetected;
 
 void setupButtons(int openPin, int closePin);
 
