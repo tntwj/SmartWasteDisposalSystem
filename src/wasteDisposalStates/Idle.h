@@ -4,11 +4,11 @@
 #include "State.h"
 #include "headers/Defines.h"
 #include "controllers/LedController.h"
-#include "controllers/MotionDetector.h"
+
 
 
 extern LedController* ledController;
-extern MotionDetector* motionDetector;
+extern bool movementDetected;
 
 class Idle : public State {
     private:

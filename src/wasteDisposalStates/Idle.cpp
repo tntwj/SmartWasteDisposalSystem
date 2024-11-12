@@ -13,12 +13,13 @@ void Idle::init() {
 }
 
 State* Idle::handle() {
-    Serial.println("is pressed" + String(openPressed));
+    Serial.println("is pressed " + String(openPressed));
     if (openPressed) {
         openPressed = false;
         return new EnteringWaste();
     }
-    if (motionDetector->hasDetected()) {
+    Serial.println("movemente detected " + String(movementDetected));
+    if (movementDetected) {
         currentTime = millis();
     }
     if (millis() - currentTime >= AWAKE_PERIOD) {
