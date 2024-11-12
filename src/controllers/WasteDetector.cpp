@@ -1,5 +1,5 @@
 #include "WasteDetector.h"
-#include <headers/Defines.h>
+#include "headers/Defines.h"
 #include <Arduino.h>
 
 WasteDetector::WasteDetector(UltraSoundProxy* sensor, float maxDistance, float minDistance) {

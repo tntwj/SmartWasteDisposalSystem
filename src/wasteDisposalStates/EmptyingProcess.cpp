@@ -1,6 +1,5 @@
 #include "EmptyingProcess.h"
 #include "headers/Defines.h"
-#include "tasks/WasteDisposalTask.h"
 #include "Idle.h"
 
 EmptyingProcess::EmptyingProcess() {

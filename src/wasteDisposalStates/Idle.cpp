@@ -2,7 +2,6 @@
 #include "EnteringWaste.h"
 #include "SleepState.h"
 #include "headers/Defines.h"
-#include "tasks/WasteDisposalTask.h"
 
 Idle::Idle() {
 }

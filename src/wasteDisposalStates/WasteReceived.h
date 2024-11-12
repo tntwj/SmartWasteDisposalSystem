@@ -1,7 +1,11 @@
 #ifndef __WASTERECEIVED__
 #define __WASTERECEIVED__
+
 #include "headers/Defines.h"
 #include "State.h"
+#include "controllers/DoorController.h"
+
+extern DoorController* doorController;
 
 class WasteReceived : public State {
     private:

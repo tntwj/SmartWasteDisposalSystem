@@ -1,6 +1,4 @@
 #include "DangerousTemp.h"
-#include "tasks/WasteDisposalTask.h"
-#include "tasks/MeasureTemperatureTask.h"
 
 DangerousTemp::DangerousTemp() {
 }

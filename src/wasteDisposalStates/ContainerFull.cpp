@@ -1,5 +1,4 @@
 #include "ContainerFull.h"
-#include "tasks/WasteDisposalTask.h"
 #include "SleepState.h"
 
 ContainerFull::ContainerFull() {

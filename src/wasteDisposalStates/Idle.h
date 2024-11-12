@@ -3,6 +3,9 @@
 
 #include "State.h"
 #include "headers/Defines.h"
+#include "controllers/LedController.h"
+
+extern LedController* ledController;
 
 class Idle : public State {
     private:

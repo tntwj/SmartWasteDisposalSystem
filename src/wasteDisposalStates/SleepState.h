@@ -2,6 +2,9 @@
 #define __SLEEP_STATE__
 
 #include "State.h"
+#include "controllers/MotionDetector.h"
+
+extern MotionDetector* motionDetector;
 
 class SleepState: public State {
     public:

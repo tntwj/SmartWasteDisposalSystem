@@ -3,6 +3,11 @@
 
 #include "State.h"
 #include "headers/Defines.h"
+#include "controllers/LedController.h"
+#include "controllers/DoorController.h"
+
+extern LedController* ledController;
+extern DoorController* doorController;
 
 class ContainerFull : public State {
     private:

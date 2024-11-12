@@ -1,7 +1,7 @@
 #ifndef __TEMPERATURE_CONTROLLER__
 #define __TEMPERATURE_CONTROLLER__
 
-#include <components/TemperatureSensor.h>
+#include "components/TemperatureSensor.h"
 
 class TemperatureController {
     public:

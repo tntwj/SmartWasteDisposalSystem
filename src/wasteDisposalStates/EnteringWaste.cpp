@@ -1,9 +1,7 @@
 #include "EnteringWaste.h"
 #include "headers/Defines.h"
-#include "tasks/WasteDisposalTask.h"
 #include "ContainerFull.h"
 #include "WasteReceived.h"
-#include "tasks/MeasureLevelTask.h"
 
 EnteringWaste::EnteringWaste() {
 }
