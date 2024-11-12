@@ -5,8 +5,6 @@
 #include "headers/Defines.h"
 #include "controllers/LedController.h"
 
-
-
 extern LedController* ledController;
 extern bool movementDetected;
 

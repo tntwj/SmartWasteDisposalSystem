@@ -29,6 +29,7 @@ bool movementDetected = false;
 void setup() {
     MsgService.init();
 	setupButtons(OPEN_BUTTON_PIN, CLOSE_BUTTON_PIN);
+	setupMotionSensor(PIR_SENSOR_PIN);
     PWMServo* servo = new PWMServo();
     servo->attach(SERVO_PIN);
     doorController = new DoorController(servo);

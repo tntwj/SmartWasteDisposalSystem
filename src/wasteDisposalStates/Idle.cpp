@@ -18,7 +18,7 @@ State* Idle::handle() {
         openPressed = false;
         return new EnteringWaste();
     }
-    Serial.println("movemente detected " + String(movementDetected));
+    Serial.println("Movemente detected " + String(movementDetected));
     if (movementDetected) {
         currentTime = millis();
     }
