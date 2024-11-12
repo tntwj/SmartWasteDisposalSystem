@@ -7,7 +7,6 @@
 #include "controllers/MotionDetector.h"
 #include "controllers/DoorController.h"
 #include "controllers/LedController.h"
-#include "controllers/ButtonPadController.h"
 #include "wasteDisposalStates/Idle.h"
 
 /**controllers as global because every state should use controllers to act/verify events */

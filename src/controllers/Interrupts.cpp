@@ -1,4 +1,4 @@
-#include "ButtonPadController.h"
+#include "Interrupts.h"
 
 #include <Arduino.h>
 #include <EnableInterrupt.h>
@@ -17,3 +17,12 @@ void openButtonISR() {
 void closeButtonISR() {
     closePressed = true;
 }
+
+void setupMotionSensor(int pirPin) {
+
+}
+
+void pirISR() {
+    
+}
+

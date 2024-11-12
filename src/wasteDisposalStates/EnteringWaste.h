@@ -4,9 +4,10 @@
 #include "State.h"
 #include "headers/Defines.h"
 #include "controllers/WasteDetector.h"
-#include "controllers/ButtonPadController.h"
 
 extern WasteDetector* wasteDetector;
+extern bool openPressed;
+extern bool closePressed;
 
 class EnteringWaste : public State {
     private:
