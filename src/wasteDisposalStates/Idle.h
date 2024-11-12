@@ -13,7 +13,7 @@ class Idle : public State {
      * @TODO to be optimized
     */
     int count = 0;
-    int limit = AWAKE_PERIOD / WASTE_DISPOSAL_TASK_PERIOD;
+    int limit = 5;
     public:
         Idle();
         void init() override;

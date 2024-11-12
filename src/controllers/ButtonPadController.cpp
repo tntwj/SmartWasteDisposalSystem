@@ -18,8 +18,8 @@ ButtonPadController::ButtonPadController(int openPin, int closePin) {
 void ButtonPadController::init() {
     pinMode(this->openPin, INPUT);
     pinMode(this->closePin, INPUT);
-    enableInterrupt(this->openPin, openButtonISR, HIGH);
-    enableInterrupt(this->closePin, closeButtonISR, HIGH);
+    enableInterrupt(this->openPin, openButtonISR, RISING);
+    enableInterrupt(this->closePin, closeButtonISR, RISING);
     instance = this;
 }
 

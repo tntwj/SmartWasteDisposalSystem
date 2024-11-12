@@ -2,19 +2,25 @@
 #include "EnteringWaste.h"
 #include "SleepState.h"
 #include "headers/Defines.h"
+#include <Arduino.h>
 
 Idle::Idle() {
 }
 
 void Idle::init() {
+    Serial.print("State Idle");
     ledController->switchOnGreen();
 }
 
 State* Idle::handle() {
-    if (buttonPadController->isOpenPressed()) {
+    bool isOpenPressed = buttonPadController->isOpenPressed();
+    Serial.println("is pressed" + String(buttonPadController->isOpenPressed()));
+    Serial.println("is close pressed" + String(buttonPadController->isClosePressed()));
+    if (isOpenPressed) {
         return new EnteringWaste();
     }
     count++;
+    Serial.println(count);
     if (count > limit) {
         count = 0;
         return new SleepState();

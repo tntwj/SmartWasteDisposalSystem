@@ -1,6 +1,9 @@
 #include "WasteDisposalTask.h"
 #include "wasteDisposalStates/DangerousTemp.h"
 
+WasteDisposalTask::WasteDisposalTask() {
+    currentState->init();
+}
 
 void WasteDisposalTask::tick() {
     State* nextState = nullptr;

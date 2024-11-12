@@ -2,8 +2,10 @@
 #include "headers/Defines.h"
 #include "ContainerFull.h"
 #include "WasteReceived.h"
+#include <Arduino.h>
 
 EnteringWaste::EnteringWaste() {
+    Serial.print("Entering Waste");
 }
 
 void EnteringWaste::init() {
