@@ -10,11 +10,9 @@ void EmptyingProcess::init() {
 }
 
 State* EmptyingProcess::handle() {
-    count++;
-    if (count > limit) {
+    if (millis() - currentTime >= EMPTYING_PROCESS) {
         doorController->close();
         ledController->switchOffRed();
-        count = 0;
         return new Idle();
     }
     return nullptr;

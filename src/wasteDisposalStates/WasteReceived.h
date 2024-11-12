@@ -9,11 +9,7 @@ extern DoorController* doorController;
 
 class WasteReceived : public State {
     private:
-    /**using simplest count version to switch states.
-     * @TODO to be optimized
-    */
-    int count = 0;
-    int limit = WASTE_RECEIVED_PERIOD / WASTE_DISPOSAL_TASK_PERIOD;
+    unsigned long currentTime;
     public:
         WasteReceived();
         void init() override;

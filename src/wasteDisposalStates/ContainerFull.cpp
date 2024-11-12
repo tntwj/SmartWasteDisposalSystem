@@ -11,9 +11,7 @@ void ContainerFull::init() {
 }
 
 State* ContainerFull::handle() {
-    count++;
-    if (count > limit) {
-        count = 0;
+    if (millis() - currentTime >= AWAKE_PERIOD) {
         return new SleepState();
     }
     return nullptr;

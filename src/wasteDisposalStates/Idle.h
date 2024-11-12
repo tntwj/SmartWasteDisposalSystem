@@ -4,16 +4,15 @@
 #include "State.h"
 #include "headers/Defines.h"
 #include "controllers/LedController.h"
+#include "controllers/MotionDetector.h"
+
 
 extern LedController* ledController;
+extern MotionDetector* motionDetector;
 
 class Idle : public State {
     private:
-    /**using simplest count version to switch states.
-     * @TODO to be optimized
-    */
-    int count = 0;
-    int limit = 5;
+    unsigned long currentTime;
     public:
         Idle();
         void init() override;

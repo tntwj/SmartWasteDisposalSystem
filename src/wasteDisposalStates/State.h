@@ -1,5 +1,6 @@
 #ifndef __STATE__
 #define __STATE__
+#include <Arduino.h>
 
 class State {
     public:

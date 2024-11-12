@@ -10,9 +10,7 @@ void WasteReceived::init() {
 }
 
 State* WasteReceived::handle() {
-    count++;
-    if (count > limit) {
-        count = 0;
+    if (millis() - currentTime >= WASTE_RECEIVED_PERIOD) {
         return new Idle();
     }
     return nullptr;
