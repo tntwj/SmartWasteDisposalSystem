@@ -4,8 +4,7 @@
 #include "State.h"
 #include "controllers/MotionDetector.h"
 
-extern MotionDetector* motionDetector;
-
+extern bool movementDetected;
 class SleepState: public State {
     public:
         SleepState();
