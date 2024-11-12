@@ -14,10 +14,10 @@ void SleepState::init() {
 }
 
 State* SleepState::handle() {
-    if (motionDetector->hasDetected() && ledController->isGreenOn()) {
+    if (movementDetected && ledController->isGreenOn()) {
         return new Idle();
     }
-    if (motionDetector->hasDetected() && ledController->isRedOn()) {
+    if (movementDetected && ledController->isRedOn()) {
         return new ContainerFull();
     }
     return nullptr;

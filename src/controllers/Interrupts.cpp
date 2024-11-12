@@ -24,10 +24,10 @@ void closeButtonISR() {
 void setupMotionSensor(int pin) {
     pirPin = pin;
     pinMode(pin, INPUT);
-    enableInterrupt(pin, pirISR, CHANGE);
+    enableInterrupt(pin, pirISR, HIGH);
 }
 
 void pirISR() {
-    movementDetected = digitalRead(pirPin);
+    movementDetected = true;
 }
 
