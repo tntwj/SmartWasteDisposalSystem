@@ -3,7 +3,6 @@
 
 #include "Task.h"
 #include "wasteDisposalStates/State.h"
-#include "MeasureTemperatureTask.h"
 #include "controllers/TemperatureController.h"
 #include "controllers/MotionDetector.h"
 #include "controllers/DoorController.h"
@@ -18,7 +17,7 @@ extern DoorController* doorController;
 extern LedController* ledController;
 extern TemperatureController* temperatureController;
 
-class WasteDisposalTask: public Task{
+class WasteDisposalTask: public Task {
     private:
         State* currentState = new Idle();
         State* stateBeforeHighTemp = nullptr;

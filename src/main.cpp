@@ -20,7 +20,7 @@ Scheduler sched;
 
 void setup() {
     buttonPadController = new ButtonPadController(OPEN_BUTTON_PIN, CLOSE_BUTTON_PIN);
-    Servo* servo = new Servo();
+    PWMServo* servo = new PWMServo();
     servo->attach(SERVO_PIN);
     doorController = new DoorController(servo);
     motionDetector = new MotionDetector(new PirSensor(PIR_SENSOR_PIN));

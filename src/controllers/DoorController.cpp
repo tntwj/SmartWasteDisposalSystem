@@ -2,7 +2,7 @@
 #include <Arduino.h>
 #include "headers/Defines.h"
 
-DoorController::DoorController(Servo* actuator) {
+DoorController::DoorController(PWMServo* actuator) {
     this->servo = actuator;
     this->servo->write(DOOR_CLOSED_ANGLE);
     delay(SWEEP_TIME);
