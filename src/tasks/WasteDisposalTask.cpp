@@ -9,7 +9,7 @@ void WasteDisposalTask::tick() {
     State* nextState = nullptr;
     bool isCurrentTempHigh = tempController->isTempHigh();
     nextState = currentState->handle();
-    if (nextState != nullptr) {
+    if (nextState != nullptr && !isCurrentTempHigh) {
         delete currentState;
         currentState = nextState;
         currentState->init();
