@@ -20,8 +20,9 @@ void EnteringWaste::init() {
 }
 
 State* EnteringWaste::handle() {
-    Serial.println(wasteDetector->getDistance());
-    if (wasteDetector->getLevel() <= MIN_WASTE_LEVEL) {
+    Serial.println("Waste level: " + String(wasteDetector->getLevel()));
+    Serial.println("Measured distance " + String(wasteDetector->getDistance()));
+    if (wasteDetector->isFull()) {
         return new ContainerFull();
     }
     if (openPressed || millis() - currentTime >= ENTERING_WASTE_PERIOD) {
