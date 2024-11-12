@@ -20,12 +20,12 @@ MotionDetector* motionDetector;
 TemperatureController* tempController;
 WasteDetector* wasteDetector;
 LedController* ledController;
-LiquidCrystal_I2C* lcd = new LiquidCrystal_I2C(0x27, 16, 2);
+LiquidCrystal_I2C* lcd;
 Scheduler sched;
 
 void setup() {
     MsgService.init();
-    buttonPadController = new ButtonPadController(OPEN_BUTTON_PIN, CLOSE_BUTTON_PIN);
+
     PWMServo* servo = new PWMServo();
     servo->attach(SERVO_PIN);
     doorController = new DoorController(servo);
@@ -33,6 +33,9 @@ void setup() {
     tempController = new TemperatureController(new TemperatureSensor(TEMP_SENSOR_PIN), TEMPERATURE_THRESHOLD);
     wasteDetector = new WasteDetector(new UltraSoundProxy(ULTRA_SOUND_ECHO_PIN, ULTRA_SOUND_TRIG_PIN), MAX_WASTE_LEVEL, MIN_WASTE_LEVEL);
     ledController = new LedController(new Led(GREEN_LED_PIN), new Led(RED_LED_PIN));
+	buttonPadController = new ButtonPadController(OPEN_BUTTON_PIN, CLOSE_BUTTON_PIN);
+
+	lcd = new LiquidCrystal_I2C(0x27, 16, 2);
 	lcd->init();
 	lcd->backlight();
 
