@@ -14,6 +14,8 @@
 #include "tasks/DetectingMotionTask.h"
 #include "LiquidCrystal_I2C.h"
 #include "communication/MsgService.h"
+#include "tasks/ReceiveMsgTask.h"
+#include "tasks/SendMsgTask.h"
 
 
 DoorController* doorController;
@@ -59,6 +61,12 @@ void setup() {
     Task* wasteDisposalTask = new WasteDisposalTask();
     wasteDisposalTask->init(WASTE_DISPOSAL_TASK_PERIOD);
     sched.addTask(wasteDisposalTask);
+    Task* receiveMsg = new ReceiveMsgTask();
+    receiveMsg->init(RECEIVE_MSG_PERIOD);
+    sched.addTask(receiveMsg);
+    Task* sendMsg = new SendMsgTask();
+    sendMsg->init(SEND_MSG_PERIOD);
+    sched.addTask(sendMsg);
 
 }
 
