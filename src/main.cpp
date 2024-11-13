@@ -11,8 +11,10 @@
 #include "tasks/MeasureLevelTask.h"
 #include "tasks/MeasureTemperatureTask.h"
 #include "tasks/WasteDisposalTask.h"
+#include "tasks/DetectingMotionTask.h"
 #include "LiquidCrystal_I2C.h"
 #include "communication/MsgService.h"
+
 
 DoorController* doorController;
 MotionDetector* motionDetector;
@@ -48,12 +50,16 @@ void setup() {
     Task* measureLevel = new MeasureLevelTask();
     measureLevel->init(MEASURE_LEVEL_PERIOD);
     sched.addTask(measureLevel);
+    Task* detectingMotionTask = new DetectingMotionTask();
+    detectingMotionTask->init(DETECTING_MOTION_PERIOD);
+    sched.addTask(detectingMotionTask);
     Task* measureTemp = new MeasureTemperatureTask();
     measureTemp->init(MEASURE_TEMPERATURE_PERIOD);
     sched.addTask(measureTemp);
     Task* wasteDisposalTask = new WasteDisposalTask();
     wasteDisposalTask->init(WASTE_DISPOSAL_TASK_PERIOD);
     sched.addTask(wasteDisposalTask);
+
 }
 
 void loop() {
