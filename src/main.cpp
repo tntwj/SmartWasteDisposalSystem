@@ -60,15 +60,18 @@ void setup() {
     Task* measureTemp = new MeasureTemperatureTask();
     measureTemp->init(MEASURE_TEMPERATURE_PERIOD);
     sched.addTask(measureTemp);
-    Task* wasteDisposalTask = new WasteDisposalTask();
-    wasteDisposalTask->init(WASTE_DISPOSAL_TASK_PERIOD);
-    sched.addTask(wasteDisposalTask);
+    /*
     Task* receiveMsg = new ReceiveMsgTask();
     receiveMsg->init(RECEIVE_MSG_PERIOD);
     sched.addTask(receiveMsg);
+    */
     Task* sendMsg = new SendMsgTask();
     sendMsg->init(SEND_MSG_PERIOD);
     sched.addTask(sendMsg);
+    Task* wasteDisposalTask = new WasteDisposalTask();
+    wasteDisposalTask->init(WASTE_DISPOSAL_TASK_PERIOD);
+    sched.addTask(wasteDisposalTask);
+
 
 }
 

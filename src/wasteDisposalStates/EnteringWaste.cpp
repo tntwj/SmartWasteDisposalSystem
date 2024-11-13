@@ -17,6 +17,7 @@ void EnteringWaste::init() {
     lcd->print("PRESS CLOSE");
     lcd->setCursor(0, 1);
     lcd->print("WHEN DONE");
+    closePressed = false;
 }
 
 State* EnteringWaste::handle() {

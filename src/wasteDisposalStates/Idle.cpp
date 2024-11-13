@@ -16,6 +16,7 @@ void Idle::init() {
     lcd->print("PRESS OPEN TO");
     lcd->setCursor(0, 1);
     lcd->print("ENTER WASTE");
+    openPressed = false;
 }
 
 State* Idle::handle() {
