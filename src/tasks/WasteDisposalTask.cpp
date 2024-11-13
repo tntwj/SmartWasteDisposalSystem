@@ -16,11 +16,12 @@ void WasteDisposalTask::tick() {
     }
     /**
      * se avviene lo switch dalla temperatura alta alla temperatura bassa, stateBeforeHighTemp 
-     * serve nel caso in cui la temperatura tornasse normale oppure operatore clicca bottone "restore" 
+     * serve nel caso in cui oppure operatore clicca bottone "restore" 
      * lo stato venga tornato allo stato prima della high temperature.
      * else if avviene quando c'è lo switch da uno stato qualsiasi alla temperatura alta.
     */
-    if ((isPrevTempHigh && !isCurrentTempHigh) || (isCurrentTempHigh && stateMsg == "RESTORE")) {
+    if (isCurrentTempHigh && restorePressed) {
+        restorePressed = false;
         delete currentState;
         currentState = stateBeforeHighTemp;
         currentState->init();

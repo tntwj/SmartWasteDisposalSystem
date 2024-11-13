@@ -15,6 +15,7 @@ extern DoorController* doorController;
 extern LedController* ledController;
 extern TemperatureController* tempController;
 extern String stateMsg;
+extern bool restorePressed;
 
 class WasteDisposalTask: public Task {
     private:

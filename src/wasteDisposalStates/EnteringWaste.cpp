@@ -12,6 +12,7 @@ void EnteringWaste::init() {
     stateMsg="ENTERING_WASTE";
     currentTime = millis();
     doorController->openFront();
+    ledController->switchOnGreen();
     lcd->clear();
     lcd->setCursor(0, 0);
     lcd->print("PRESS CLOSE");
@@ -21,8 +22,6 @@ void EnteringWaste::init() {
 }
 
 State* EnteringWaste::handle() {
-    Serial.println("Waste level: " + String(wasteDetector->getLevel()));
-    Serial.println("Measured distance " + String(wasteDetector->getDistance()));
     if (wasteDetector->isFull()) {
         return new ContainerFull();
     }

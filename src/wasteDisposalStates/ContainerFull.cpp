@@ -21,7 +21,7 @@ State* ContainerFull::handle() {
     if (millis() - currentTime >= AWAKE_PERIOD) {
         return new SleepState();
     }
-    if (stateMsg == "EMPTYINGPROCESS") {
+    if (stateMsg == "EMPTYING_PROCESS") {
         return new EmptyingProcess();
     }
     return nullptr;

@@ -7,8 +7,8 @@
 #define RED_LED_PIN 6
 #define ECHO_PIN 7
 #define TRIG_PIN 8
-#define CLOSE_PIN 11
-#define OPEN_PIN 12
+#define CLOSE_PIN 12
+#define OPEN_PIN 13
 #define TEMP_PIN 14 //equivalent of A0
 
 #endif

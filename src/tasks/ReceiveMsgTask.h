@@ -4,6 +4,7 @@
 #include "Task.h"
 
 extern MsgServiceClass MsgService;
+extern bool restorePressed;
 
 class ReceiveMsgTask: public Task {
     public:
