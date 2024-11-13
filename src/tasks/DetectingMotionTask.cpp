@@ -3,6 +3,4 @@
 
 void DetectingMotionTask::tick() {
     motionDetector->sense();
-    Serial.println("motion detected: " + String(motionDetector->hasDetected()));
-
 }
