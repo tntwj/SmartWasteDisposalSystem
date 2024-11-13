@@ -6,7 +6,7 @@ ContainerFull::ContainerFull() {
 }
 
 void ContainerFull::init() {
-    stateMsg="CONTAINERFULL";
+    stateMsg="CONTAINER_FULL";
     Serial.println("container full");
     ledController->switchOffGreen();
     ledController->switchOnRed();

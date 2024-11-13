@@ -9,7 +9,7 @@ EnteringWaste::EnteringWaste() {
 }
 
 void EnteringWaste::init() {
-    stateMsg="ENTERINGWASTE";
+    stateMsg="ENTERING_WASTE";
     currentTime = millis();
     doorController->openFront();
     lcd->clear();
