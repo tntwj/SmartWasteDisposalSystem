@@ -6,12 +6,12 @@ extern bool closePressed;
 
 void setupButtons(int openPin, int closePin);
 
-void setupMotionSensor(int pirPin);
-
 void openButtonISR();
 
 void closeButtonISR();
 
-void pirISR();
+void sleep();
+
+void wake();
 
 #endif

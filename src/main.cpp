@@ -26,10 +26,12 @@ LedController* ledController;
 LiquidCrystal_I2C* lcd;
 Scheduler sched;
 
+
 bool openPressed = false;
 bool closePressed = false;
 
 String stateMsg;
+
 
 void setup() {
     MsgService.init();

@@ -19,12 +19,10 @@ void Idle::init() {
 }
 
 State* Idle::handle() {
-    Serial.println("is pressed " + String(openPressed));
     if (openPressed) {
         openPressed = false;
         return new EnteringWaste();
     }
-    Serial.println("Movemente detected " + String(motionDetector->hasDetected()));
     if (motionDetector->hasDetected()) {
         currentTime = millis();
     }

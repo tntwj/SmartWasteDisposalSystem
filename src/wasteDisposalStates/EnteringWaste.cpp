@@ -25,7 +25,8 @@ State* EnteringWaste::handle() {
     if (wasteDetector->isFull()) {
         return new ContainerFull();
     }
-    if (openPressed || millis() - currentTime >= ENTERING_WASTE_PERIOD) {
+    if (closePressed || millis() - currentTime >= ENTERING_WASTE_PERIOD) {
+        closePressed = false;
         return new WasteReceived();
     }
     return nullptr;
