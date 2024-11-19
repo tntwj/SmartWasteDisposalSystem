@@ -1,7 +1,7 @@
 #ifndef __PINS__
 #define __PINS__
 
-#define SERVO_PIN 9 // Has to be a PWN pin
+#define SERVO_PIN 9
 #define PIR_PIN 4
 #define GREEN_LED_PIN 5
 #define RED_LED_PIN 6
