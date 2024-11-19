@@ -15,10 +15,12 @@ void WasteDisposalTask::tick() {
         currentState->init();
     }
     /** 
-     * To let after restored dangerous temperature state it will return in state before the dangerous state.
-     * I choose to let this class to control the switching states between dangerous and normal state.
+     * We also decided to let this task control the switching between dangerous temp and normal state.
+     * It has to be said that an operator might push the restore button, meaning that the high temp issue
+     * has supposedly been fixed. In that case the system upon restore will go to into a dangerous temp state again
+     * if the problem was not actually fixed.
      */
-    if (restorePressed && stateMsg=="DANGEROUS_TEMP") {
+    if (restorePressed && stateMsg == "DANGEROUS_TEMP") {
         restorePressed = false;
         delete currentState;
         currentState = stateBeforeHighTemp;

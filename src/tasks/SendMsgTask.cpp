@@ -1,7 +1,7 @@
 #include "SendMsgTask.h"
 
 /**
- * The agreed protocol for sending information to the Dashboard was sending messages in this format: STATE:x|TEMP:y|LEVEL:z
+ * The agreed format for sending info to the Dashboard is the following: STATE:x|TEMP:y|LEVEL:z
  */
 void SendMsgTask::tick() {
     if (!MsgService.isMsgAvailable()) {
