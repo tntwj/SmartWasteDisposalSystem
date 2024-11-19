@@ -17,6 +17,11 @@
 #include "tasks/ReceiveMsgTask.h"
 #include "tasks/SendMsgTask.h"
 
+/**
+ * Smart Waste Disposal System
+ * Authors: Jiekai Sun, Weijie Fu
+ * Circuit reference: https://www.tinkercad.com/things/jeAILgwnFkv/editel?returnTo=%2Fdashboard%2Fdesigns%2F3d&sharecode=YDmwm7--O91lVCbLLkdhs38Kk4OQZdfsxm7rCnqy6js
+ **/
 
 DoorController* doorController;
 MotionDetector* motionDetector;
@@ -26,16 +31,15 @@ LedController* ledController;
 LiquidCrystal_I2C* lcd;
 Scheduler sched;
 
-
 bool openPressed = false;
 bool closePressed = false;
 bool restorePressed = false;
 String stateMsg;
 
-
 void setup() {
     MsgService.init();
 	setupButtons(OPEN_PIN, CLOSE_PIN);
+
     ServoTimer2* servo = new ServoTimer2();
     servo->attach(SERVO_PIN);
     doorController = new DoorController(servo);
@@ -50,7 +54,7 @@ void setup() {
 
     sched.init(50);
 
-    /*creating tasks and add to scheduler*/
+    /* Creating tasks and adding them to the scheduler */
     Task* measureLevel = new MeasureLevelTask();
     measureLevel->init(MEASURE_LEVEL_PERIOD);
     sched.addTask(measureLevel);
@@ -69,10 +73,8 @@ void setup() {
     Task* wasteDisposalTask = new WasteDisposalTask();
     wasteDisposalTask->init(WASTE_DISPOSAL_TASK_PERIOD);
     sched.addTask(wasteDisposalTask);
-
-
 }
 
 void loop() {
-  sched.schedule();
+    sched.schedule();
 }
