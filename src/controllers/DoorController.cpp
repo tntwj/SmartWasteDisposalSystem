@@ -4,7 +4,7 @@
 
 DoorController::DoorController(ServoTimer2* actuator) {
     this->servo = actuator;
-    this->servo->write(DOOR_CLOSED_ANGLE);
+    this->servo->write(DOOR_CLOSED_WIDTH);
     this->currentDoorState = DOOR_CLOSED;
 }
 
@@ -17,7 +17,7 @@ DoorController::~DoorController() {
  */
 bool DoorController::openFront() {
     if (currentDoorState == DOOR_CLOSED) {
-        this->servo->write(FRONT_DOOR_OPEN_ANGLE);
+        this->servo->write(FRONT_DOOR_OPEN_WIDTH);
         this->currentDoorState = FRONT_OPEN;
         return true;
     }
@@ -29,7 +29,7 @@ bool DoorController::openFront() {
  */
 bool DoorController::openBack() {
     if (currentDoorState == DOOR_CLOSED) {
-        this->servo->write(BACK_DOOR_OPEN_ANGLE);
+        this->servo->write(BACK_DOOR_OPEN_WIDTH);
         this->currentDoorState = BACK_OPEN;
         return true;
     }
@@ -42,7 +42,7 @@ bool DoorController::openBack() {
 bool DoorController::close() {
     if (currentDoorState == BACK_OPEN || currentDoorState == FRONT_OPEN) {
         this->currentDoorState = DOOR_CLOSED;
-        this->servo->write(DOOR_CLOSED_ANGLE);
+        this->servo->write(DOOR_CLOSED_WIDTH);
         return true;
     }
     return false;

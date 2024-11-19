@@ -29,7 +29,7 @@ void WasteDetector::readLevel() {
 }
 
 /**
- * Returns the latest read distance. In order to get the latest value readLevel() should be called first.
+ * Returns the last read distance. In order to get the latest value readLevel() should be called first.
  */
 float WasteDetector::getDistance() {
     return this->distance;

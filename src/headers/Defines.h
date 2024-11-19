@@ -1,15 +1,16 @@
 #ifndef __DEFINES__
 #define __DEFINES__
 
-#define BACK_DOOR_OPEN_ANGLE 750
-#define DOOR_CLOSED_ANGLE 1500
-#define FRONT_DOOR_OPEN_ANGLE 2250
-#define SWEEP_TIME 200 //Optimal for the SG90. 180 could is the minimum acceptable.
+// Servo pulse width values
+#define BACK_DOOR_OPEN_WIDTH 750
+#define DOOR_CLOSED_WIDTH 1500
+#define FRONT_DOOR_OPEN_WIDTH 2250
 
 #define TEMP_THRESHOLD 40
-#define MAX_WASTE_DISTANCE 0.5f
-#define MIN_WASTE_DISTANCE 0.05f
+#define MAX_WASTE_DISTANCE 0.5f     // Max WasteDetector range, half a meter
+#define MIN_WASTE_DISTANCE 0.05f    // Min WasteDetector range, 5 cm
 
+// Timings in milliseconds
 #define SCHEDULE_PERIOD 100
 #define DETECTING_MOTION_PERIOD 200
 #define MEASURE_LEVEL_PERIOD 200
@@ -18,6 +19,7 @@
 #define RECEIVE_MSG_PERIOD 200
 #define SEND_MSG_PERIOD 200
 
+// State specific timings
 #define ENTERING_WASTE_PERIOD 5000
 #define WASTE_RECEIVED_PERIOD 2000
 #define AWAKE_PERIOD 5000

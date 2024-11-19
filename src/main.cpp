@@ -52,7 +52,7 @@ void setup() {
 	lcd->init();
 	lcd->backlight();
 
-    sched.init(50);
+    sched.init(SCHEDULE_PERIOD);
 
     /* Creating tasks and adding them to the scheduler */
     Task* measureLevel = new MeasureLevelTask();
