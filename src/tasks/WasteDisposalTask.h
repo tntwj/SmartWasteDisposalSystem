@@ -1,5 +1,5 @@
-#ifndef __WASTEDISPOSALTASK__
-#define __WASTEDISPOSALTASK__
+#ifndef __WASTE_DISPOSAL_TASK__
+#define __WASTE_DISPOSAL_TASK__
 
 #include "Task.h"
 #include "wasteDisposalStates/State.h"
@@ -9,7 +9,6 @@
 #include "controllers/LedController.h"
 #include "wasteDisposalStates/Idle.h"
 
-/**controllers as global because every state should use controllers to act/verify events */
 extern MotionDetector* motionDetector;
 extern DoorController* doorController;
 extern LedController* ledController;

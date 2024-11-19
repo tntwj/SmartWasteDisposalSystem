@@ -1,5 +1,5 @@
-#ifndef __MEASURETEMPERATURETASK__
-#define __MEASURETEMPERATURETASK__
+#ifndef __MEASURE_TEMPERATURE_TASK__
+#define __MEASURE_TEMPERATURE_TASK__
 
 #include "Task.h"
 #include "controllers/TemperatureController.h"

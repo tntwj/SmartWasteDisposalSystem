@@ -1,5 +1,5 @@
-#ifndef __MEASURELEVELTASK__
-#define __MEASURELEVELTASK__
+#ifndef __MEASURE_LEVEL_TASK__
+#define __MEASURE_LEVEL_TASK__
 
 #include "Task.h"
 #include "controllers/WasteDetector.h"

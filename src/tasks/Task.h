@@ -13,7 +13,7 @@ public:
 
     virtual void tick() = 0;
 
-    // BasePeriod is the period used by scheduler.
+    // BasePeriod is the one used by scheduler.
     bool updateAndCheckTime(int basePeriod) {
         timeElapsed += basePeriod;
         if (timeElapsed >= myPeriod) {

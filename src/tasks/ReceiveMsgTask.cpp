@@ -1,5 +1,6 @@
 #include "ReceiveMsgTask.h"
 #include <Arduino.h>
+
 extern String stateMsg;
 
 void ReceiveMsgTask::tick() {

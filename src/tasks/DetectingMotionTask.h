@@ -1,5 +1,6 @@
-#ifndef __DETECTINGMOTION__
-#define __DETECTINGMOTION__
+#ifndef __DETECTING_MOTION__
+#define __DETECTING_MOTION__
+
 #include "Task.h"
 #include "controllers/MotionDetector.h"
 

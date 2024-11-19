@@ -1,5 +1,6 @@
-#ifndef __RECEIVEMSG__
-#define __RECEIVEMSG__
+#ifndef __RECEIVE_MSG__
+#define __RECEIVE_MSG__
+
 #include "communication/MsgService.h"
 #include "Task.h"
 
@@ -10,4 +11,5 @@ class ReceiveMsgTask: public Task {
     public:
         void tick();
 };
+
 #endif
