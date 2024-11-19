@@ -1,5 +1,5 @@
-#ifndef __DANGEROUSTEMP__
-#define __DANGEROUSTEMP__
+#ifndef __DANGEROUS_TEMP__
+#define __DANGEROUS_TEMP__
 
 #include "State.h"
 #include "controllers/LedController.h"

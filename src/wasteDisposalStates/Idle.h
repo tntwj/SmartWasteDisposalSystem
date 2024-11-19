@@ -14,10 +14,11 @@ extern LiquidCrystal_I2C* lcd;
 
 class Idle : public State {
     private:
-    unsigned long currentTime;
+        unsigned long currentTime;
     public:
         Idle();
         void init() override;
         State* handle() override;
 };
+
 #endif

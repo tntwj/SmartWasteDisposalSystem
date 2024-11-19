@@ -8,7 +8,7 @@ EnteringWaste::EnteringWaste() {
 }
 
 void EnteringWaste::init() {
-    stateMsg="ENTERING_WASTE";
+    stateMsg = "ENTERING_WASTE";
     currentTime = millis();
     doorController->openFront();
     ledController->switchOnGreen();

@@ -6,7 +6,7 @@ EmptyingProcess::EmptyingProcess() {
 }
 
 void EmptyingProcess::init() {
-    stateMsg="EMPTYING_PROCESS";
+    stateMsg = "EMPTYING_PROCESS";
     doorController->openBack();
     lcd->clear();
     lcd->setCursor(0, 0);

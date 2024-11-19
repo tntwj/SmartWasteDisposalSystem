@@ -1,5 +1,5 @@
-#ifndef __WASTERECEIVED__
-#define __WASTERECEIVED__
+#ifndef __WASTE_RECEIVED__
+#define __WASTE_RECEIVED__
 
 #include "headers/Defines.h"
 #include "State.h"
@@ -12,7 +12,7 @@ extern LiquidCrystal_I2C* lcd;
 
 class WasteReceived : public State {
     private:
-    unsigned long currentTime;
+        unsigned long currentTime;
     public:
         WasteReceived();
         void init() override;

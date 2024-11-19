@@ -16,6 +16,4 @@ class SleepState: public State {
         State* handle() override;
 };
 
-void wakeUp1();
-
 #endif

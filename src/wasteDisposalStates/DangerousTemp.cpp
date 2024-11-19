@@ -4,7 +4,7 @@ DangerousTemp::DangerousTemp() {
 }
 
 void DangerousTemp::init() {
-    stateMsg="DANGEROUS_TEMP";
+    stateMsg = "DANGEROUS_TEMP";
     ledController->switchOffGreen();
     ledController->switchOnRed();
     doorController->close();

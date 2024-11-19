@@ -4,11 +4,7 @@
 #include <Arduino.h>
 #include "controllers/Interrupts.h"
 
-
 SleepState::SleepState() {
-}
-
-void wakeUp1() {
 }
 
 void SleepState::init() {
@@ -18,11 +14,9 @@ void SleepState::init() {
     lcd->noBacklight();
     lcd->noDisplay();
     sleep();
-    // Enable interrupt on pir pin when the tension rises to wake up.
 }
 
 State* SleepState::handle() {
-    
     if (motionDetector->hasDetected()) {
         lcd->display();
         lcd->backlight();
@@ -34,4 +28,3 @@ State* SleepState::handle() {
     }
     return nullptr;
 }
-

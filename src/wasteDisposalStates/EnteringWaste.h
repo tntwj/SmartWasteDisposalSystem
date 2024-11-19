@@ -1,5 +1,5 @@
-#ifndef __ENTERINGWASTE__
-#define __ENTERINGWASTE__
+#ifndef __ENTERING_WASTE__
+#define __ENTERING_WASTE__
 
 #include "State.h"
 #include "headers/Defines.h"
@@ -14,7 +14,7 @@ extern LiquidCrystal_I2C* lcd;
 
 class EnteringWaste : public State {
     private:
-    unsigned long currentTime;
+        unsigned long currentTime;
     public:
         EnteringWaste();
         void init() override;

@@ -1,5 +1,5 @@
-#ifndef __EMPTYINGPROCESS__
-#define __EMPTYINGPROCESS__
+#ifndef __EMPTYING_PROCESS__
+#define __EMPTYING_PROCESS__
 
 #include "headers/Defines.h"
 #include "State.h"
@@ -14,7 +14,7 @@ extern LiquidCrystal_I2C* lcd;
 
 class EmptyingProcess : public State {
     private:
-    unsigned long currentTime;
+        unsigned long currentTime;
     public:
         EmptyingProcess();
         void init() override;

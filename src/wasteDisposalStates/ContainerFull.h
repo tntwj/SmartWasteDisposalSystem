@@ -1,5 +1,5 @@
-#ifndef __CONTAINERFULL__
-#define __CONTAINERFULL__
+#ifndef __CONTAINER_FULL__
+#define __CONTAINER_FULL__
 
 #include "State.h"
 #include "headers/Defines.h"
@@ -14,7 +14,7 @@ extern LiquidCrystal_I2C* lcd;
 
 class ContainerFull : public State {
     private:
-    unsigned long currentTime;
+        unsigned long currentTime;
     public:
         ContainerFull();
         void init() override;

@@ -6,7 +6,7 @@ ContainerFull::ContainerFull() {
 }
 
 void ContainerFull::init() {
-    stateMsg="CONTAINER_FULL";
+    stateMsg = "CONTAINER_FULL";
     ledController->switchOffGreen();
     ledController->switchOnRed();
     doorController->close();
