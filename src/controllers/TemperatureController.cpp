@@ -12,7 +12,7 @@ TemperatureController::~TemperatureController() {
 }
 
 /**
- * Reads the temp.
+ * Reads the temperature.
  */
 void TemperatureController::readTemp() {
     this->currentTemp = this->tempSensor->getTemp();

@@ -31,7 +31,7 @@ void MsgServiceClass::sendMsg(const String& msg) {
     Serial.println(msg);
 }
 
-// A function that is periodically called each iteration of the super loop
+/* A function that is periodically called each iteration of the super loop */
 void serialEvent() {
     while (Serial.available()) {
         char ch = (char) Serial.read();

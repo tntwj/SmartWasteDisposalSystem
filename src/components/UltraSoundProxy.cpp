@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include "UltraSoundProxy.h"
 
-/* Assuming an ambient temperature of 20 degree celsius */
+/* The proxy sensor works by assuming an ambient temperature of 20 degree celsius */
 const float vs = 331.5 + 0.6*20;
 
 UltraSoundProxy::UltraSoundProxy(int trigPin, int echoPin) {
