@@ -1,9 +1,6 @@
 #include "MsgService.h"
 
-static const String INIT_MESSAGE = "ArduinoUno";
-
 String content;
-
 MsgServiceClass MsgService;
 
 bool MsgServiceClass::isMsgAvailable() {
@@ -24,7 +21,6 @@ Msg* MsgServiceClass::receiveMsg() {
 
 void MsgServiceClass::init() {
     Serial.begin(9600);
-    Serial.println(INIT_MESSAGE);
     content.reserve(256);
     content = "";
     this->currentMsg = nullptr;
@@ -35,8 +31,8 @@ void MsgServiceClass::sendMsg(const String& msg) {
     Serial.println(msg);
 }
 
+// A function that is periodically called each iteration of the super loop
 void serialEvent() {
-    /* reading the content */
     while (Serial.available()) {
         char ch = (char) Serial.read();
         if (ch == '\n') {
