@@ -14,13 +14,11 @@ void WasteDisposalTask::tick() {
         currentState = nextState;
         currentState->init();
     }
-    /**
-     * se avviene lo switch dalla temperatura alta alla temperatura bassa, stateBeforeHighTemp 
-     * serve nel caso in cui oppure operatore clicca bottone "restore" 
-     * lo stato venga tornato allo stato prima della high temperature.
-     * else if avviene quando c'è lo switch da uno stato qualsiasi alla temperatura alta.
-    */
-    if (isCurrentTempHigh && restorePressed) {
+    /** 
+     * To let after restored dangerous temperature state it will return in state before the dangerous state.
+     * I choose to let this class to control the switching states between dangerous and normal state.
+     */
+    if (restorePressed && stateMsg=="DANGEROUS_TEMP") {
         restorePressed = false;
         delete currentState;
         currentState = stateBeforeHighTemp;

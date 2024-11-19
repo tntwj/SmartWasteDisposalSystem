@@ -7,7 +7,6 @@ EmptyingProcess::EmptyingProcess() {
 
 void EmptyingProcess::init() {
     stateMsg="EMPTYING_PROCESS";
-    Serial.println("emptying");
     doorController->openBack();
     lcd->clear();
     lcd->setCursor(0, 0);

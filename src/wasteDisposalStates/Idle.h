@@ -20,5 +20,4 @@ class Idle : public State {
         void init() override;
         State* handle() override;
 };
-
 #endif

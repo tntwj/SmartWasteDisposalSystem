@@ -6,8 +6,6 @@
 
 
 SleepState::SleepState() {
-    //sleep
-    Serial.println("Sleep");
 }
 
 void wakeUp1() {
@@ -21,16 +19,18 @@ void SleepState::init() {
     lcd->noDisplay();
     sleep();
     // Enable interrupt on pir pin when the tension rises to wake up.
-    // Needs a pir state machine
 }
 
 State* SleepState::handle() {
- 
-    if (motionDetector->hasDetected() && stateMsg == "IDLE") {
-        return new Idle();
-    }
-    if (motionDetector->hasDetected() && stateMsg == "CONTAINERFULL") {
-        return new ContainerFull();
+    
+    if (motionDetector->hasDetected()) {
+        lcd->display();
+        lcd->backlight();
+        if (stateMsg == "IDLE") {
+            return new Idle();
+        } else if (stateMsg == "CONTAINER_FULL") {
+            return new ContainerFull();
+        }
     }
     return nullptr;
 }

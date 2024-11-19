@@ -5,7 +5,6 @@
 #include <Arduino.h>
 
 EnteringWaste::EnteringWaste() {
-    Serial.println("Entering Waste");
 }
 
 void EnteringWaste::init() {
