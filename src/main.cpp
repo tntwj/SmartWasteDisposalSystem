@@ -20,7 +20,7 @@
 /**
  * Smart Waste Disposal System
  * Authors: Jiekai Sun, Weijie Fu
- * Circuit reference: https://www.tinkercad.com/things/jeAILgwnFkv/editel?returnTo=%2Fdashboard%2Fdesigns%2F3d&sharecode=YDmwm7--O91lVCbLLkdhs38Kk4OQZdfsxm7rCnqy6js
+ * Circuit reference: https://www.tinkercad.com/things/jeAILgwnFkv-waste-disposal?sharecode=Ou7NafwWYa-81rFK5urs5CsM9qHBhnRIYDDOswOYRQA
  **/
 
 DoorController* doorController;
