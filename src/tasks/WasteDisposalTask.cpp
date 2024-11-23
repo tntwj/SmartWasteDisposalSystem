@@ -31,6 +31,11 @@ void WasteDisposalTask::tick() {
     } else if (restorePressed && this->isInDangerousTempState) {
         this->isInDangerousTempState = false;
         delete currentState;
+        /**
+         * Things could go wrong if stateBeforeHighTemp is null.
+         * Realistically speaking this block is executed after the block
+         * above was executed in a previous tick.
+         */
         this->currentState = this->stateBeforeHighTemp;
         this->currentState->execute();
     }
