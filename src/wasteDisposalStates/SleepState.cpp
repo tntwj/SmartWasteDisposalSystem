@@ -5,14 +5,10 @@
 #include "controllers/Interrupts.h"
 
 void SleepState::execute() {
-    ledController->switchOffGreen();
-    ledController->switchOffRed();
-    lcd->clear();
-    lcd->noBacklight();
-    lcd->noDisplay();
+    ledController->isGreenOn() ? ledController->switchOffRed() : ledController->switchOffGreen();
+    lcdController->turnOff();
     sleep();
-    lcd->display();
-    lcd->backlight();
+    lcdController->turnOn();
 }
 
 SleepState::SleepState(PreviousState prevState) {

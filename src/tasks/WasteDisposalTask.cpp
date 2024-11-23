@@ -1,5 +1,6 @@
 #include "WasteDisposalTask.h"
 #include "wasteDisposalStates/DangerousTemp.h"
+#include "wasteDisposalStates/Idle.h"
 
 WasteDisposalTask::WasteDisposalTask() {
     this->currentState = new Idle();

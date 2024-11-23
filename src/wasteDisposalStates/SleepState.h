@@ -2,12 +2,10 @@
 #define __SLEEP_STATE__
 
 #include "State.h"
-#include "controllers/MotionDetector.h"
-#include <LiquidCrystal_I2C.h>
+#include "controllers/LcdController.h"
 
-extern String state;
-extern MotionDetector* motionDetector;
-extern LiquidCrystal_I2C* lcd;
+extern LcdController* lcdController;
+extern String stateMessage;
 
 enum PreviousState {IDLE, CONTAINER_FULL};
 

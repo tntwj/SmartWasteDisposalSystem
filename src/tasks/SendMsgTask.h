@@ -9,7 +9,7 @@
 extern MsgServiceClass MsgService;
 extern TemperatureController* tempController;
 extern WasteDetector* wasteDetector;
-extern String state;
+extern String stateMessage;
 
 class SendMsgTask: public Task {
     public:

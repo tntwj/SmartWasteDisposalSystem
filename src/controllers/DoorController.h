@@ -9,7 +9,7 @@ enum DoorState {
 
 class DoorController {
     public:
-        DoorController(ServoTimer2* actuator);
+        DoorController(ServoTimer2* actuator, int pin);
         ~DoorController();
         bool openFront();
         bool openBack();

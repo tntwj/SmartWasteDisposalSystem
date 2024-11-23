@@ -4,12 +4,12 @@
 #include "State.h"
 #include "headers/Defines.h"
 #include "controllers/WasteDetector.h"
-#include <LiquidCrystal_I2C.h>
+#include "controllers/LcdController.h"
 
 extern WasteDetector* wasteDetector;
+extern LcdController* lcdController;
 extern bool volatile closePressed;
-extern String state;
-extern LiquidCrystal_I2C* lcd;
+extern String stateMessage;
 
 class EnteringWaste : public State {
     private:

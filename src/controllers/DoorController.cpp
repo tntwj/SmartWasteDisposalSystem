@@ -2,8 +2,9 @@
 #include <Arduino.h>
 #include "headers/Defines.h"
 
-DoorController::DoorController(ServoTimer2* actuator) {
+DoorController::DoorController(ServoTimer2* actuator, int pin) {
     this->servo = actuator;
+    this->servo->attach(pin);
     this->servo->write(DOOR_CLOSED_WIDTH);
     this->currentDoorState = DOOR_CLOSED;
 }

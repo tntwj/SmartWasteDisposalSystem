@@ -5,13 +5,13 @@
 #include "controllers/LedController.h"
 #include "controllers/DoorController.h"
 #include "controllers/TemperatureController.h"
-#include <LiquidCrystal_I2C.h>
+#include "controllers/LcdController.h"
 
 extern LedController* ledController;
 extern DoorController* doorController;
 extern TemperatureController* tempController;
-extern String state;
-extern LiquidCrystal_I2C* lcd;
+extern LcdController* lcdController;
+extern String stateMessage;
 
 class DangerousTemp: public State {
     public:

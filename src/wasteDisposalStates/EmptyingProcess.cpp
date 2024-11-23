@@ -3,21 +3,18 @@
 #include "Idle.h"
 
 void EmptyingProcess::execute() {
-    state = "EMPTYING_PROCESS";
+    stateMessage = "EMPTYING_PROCESS";
     doorController->openBack();
-    lcd->clear();
-    lcd->setCursor(0, 0);
-    lcd->print("EMPTYING");
-    lcd->setCursor(0, 1);
-    lcd->print("PROCESS");
+    lcdController->printEmptyingMessage();
     this->startTime = millis();
 }
 
 State* EmptyingProcess::next() {
-    if (millis() - startTime >= EMPTYING_PROCESS) {
+    if (millis() - startTime >= EMPTYING_PROCESS_WINDOW) {
         doorController->close();
         ledController->switchOffRed();
         return new Idle();
+    } else {
+        return nullptr;
     }
-    return nullptr;
 }

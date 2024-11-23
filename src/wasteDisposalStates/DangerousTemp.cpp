@@ -1,13 +1,11 @@
 #include "DangerousTemp.h"
 
 void DangerousTemp::execute() {
-    state = "DANGEROUS_TEMP";
+    stateMessage = "DANGEROUS_TEMP";
     ledController->switchOffGreen();
     ledController->switchOnRed();
     doorController->close();
-    lcd->clear();
-    lcd->setCursor(0, 0);
-    lcd->print("PROBLEM DETECTED");
+    lcdController->printDangerousTempMessage();
 }
 
 State* DangerousTemp::next() {

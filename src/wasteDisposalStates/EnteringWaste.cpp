@@ -5,14 +5,9 @@
 #include <Arduino.h>
 
 void EnteringWaste::execute() {
-    state = "ENTERING_WASTE";
+    stateMessage = "ENTERING_WASTE";
     doorController->openFront();
-    ledController->switchOnGreen();
-    lcd->clear();
-    lcd->setCursor(0, 0);
-    lcd->print("PRESS CLOSE");
-    lcd->setCursor(0, 1);
-    lcd->print("WHEN DONE");
+    lcdController->printEnteringWasteMessage();
     noInterrupts();
     closePressed = false;
     interrupts();
@@ -26,11 +21,12 @@ State* EnteringWaste::next() {
     noInterrupts();
     bool currentCloseButtonState = closePressed;
     interrupts();
-    if (currentCloseButtonState || millis() - startTime >= ENTERING_WASTE_PERIOD) {
+    if (currentCloseButtonState || millis() - startTime >= ENTERING_WASTE_WINDOW) {
         noInterrupts();
         closePressed = false;
         interrupts();
         return new WasteReceived();
+    } else {
+        return nullptr;
     }
-    return nullptr;
 }

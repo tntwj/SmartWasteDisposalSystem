@@ -4,13 +4,9 @@
 #include "headers/Defines.h"
 
 void Idle::execute() {
-    state = "IDLE";
+    stateMessage = "IDLE";
     ledController->switchOnGreen();
-    lcd->clear();
-    lcd->setCursor(0, 0);
-    lcd->print("PRESS OPEN TO");
-    lcd->setCursor(0, 1);
-    lcd->print("ENTER THE WASTE");
+    lcdController->printIdleMessage();
     noInterrupts();
     openPressed = false;
     interrupts();
@@ -30,8 +26,9 @@ State* Idle::next() {
     if (motionDetector->hasDetected()) {
         startTime = millis();
     }
-    if (millis() - startTime >= AWAKE_PERIOD) {
+    if (millis() - startTime >= SLEEP_TIMEOUT_WINDOW) {
         return new SleepState(IDLE);
+    } else {
+        return nullptr;
     }
-    return nullptr;
 }

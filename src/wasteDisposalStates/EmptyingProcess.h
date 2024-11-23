@@ -5,12 +5,12 @@
 #include "State.h"
 #include "controllers/DoorController.h"
 #include "controllers/LedController.h"
-#include <LiquidCrystal_I2C.h>
+#include "controllers/LcdController.h"
 
 extern LedController* ledController;
 extern DoorController* doorController;
-extern String state;
-extern LiquidCrystal_I2C* lcd;
+extern LcdController* lcdController;
+extern String stateMessage;
 
 class EmptyingProcess : public State {
     private:

@@ -3,22 +3,21 @@
 #include "EmptyingProcess.h"
 
 void ContainerFull::execute() {
-    state = "CONTAINER_FULL";
+    stateMessage = "CONTAINER_FULL";
     ledController->switchOffGreen();
     ledController->switchOnRed();
     doorController->close();
-    lcd->clear();
-    lcd->setCursor(0, 0);
-    lcd->print("CONTAINER FULL");
+    lcdController->printContainerFullMessage();
+    isContainerBeingEmptied = false;
     startTime = millis();
 }
 
 State* ContainerFull::next() {
-    if (millis() - startTime >= AWAKE_PERIOD) {
+    if (millis() - startTime >= SLEEP_TIMEOUT_WINDOW) {
         return new SleepState(CONTAINER_FULL);
-    }
-    if (state == "EMPTYING_PROCESS") {
+    } else if (isContainerBeingEmptied) {
         return new EmptyingProcess();
+    } else {
+        return nullptr;
     }
-    return nullptr;
 }
