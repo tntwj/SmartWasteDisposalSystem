@@ -15,7 +15,6 @@ extern LiquidCrystal_I2C* lcd;
 
 class DangerousTemp: public State {
     public:
-        DangerousTemp();
         void init() override;
         State* handle() override;
 };

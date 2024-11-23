@@ -3,30 +3,34 @@
 #include "SleepState.h"
 #include "headers/Defines.h"
 
-Idle::Idle() {
-}
-
 void Idle::init() {
     stateMsg = "IDLE";
-    currentTime = millis();
     ledController->switchOnGreen();
     lcd->clear();
     lcd->setCursor(0, 0);
     lcd->print("PRESS OPEN TO");
     lcd->setCursor(0, 1);
-    lcd->print("ENTER WASTE");
+    lcd->print("ENTER THE WASTE");
+    noInterrupts();
     openPressed = false;
+    interrupts();
+    startTime = millis();
 }
 
 State* Idle::handle() {
-    if (openPressed) {
+    noInterrupts();
+    bool currentOpenButtonState = openPressed;
+    interrupts();
+    if (currentOpenButtonState) {
+        noInterrupts();
         openPressed = false;
+        interrupts();
         return new EnteringWaste();
     }
     if (motionDetector->hasDetected()) {
-        currentTime = millis();
+        startTime = millis();
     }
-    if (millis() - currentTime >= AWAKE_PERIOD) {
+    if (millis() - startTime >= AWAKE_PERIOD) {
         return new SleepState();
     }
     return nullptr;

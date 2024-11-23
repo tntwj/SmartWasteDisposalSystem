@@ -1,8 +1,5 @@
 #include "DangerousTemp.h"
 
-DangerousTemp::DangerousTemp() {
-}
-
 void DangerousTemp::init() {
     stateMsg = "DANGEROUS_TEMP";
     ledController->switchOffGreen();

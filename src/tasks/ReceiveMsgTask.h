@@ -9,7 +9,7 @@ extern bool restorePressed;
 
 class ReceiveMsgTask: public Task {
     public:
-        void tick();
+        void tick() override;
 };
 
 #endif

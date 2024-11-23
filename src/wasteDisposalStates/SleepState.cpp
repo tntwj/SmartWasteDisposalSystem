@@ -4,9 +4,6 @@
 #include <Arduino.h>
 #include "controllers/Interrupts.h"
 
-SleepState::SleepState() {
-}
-
 void SleepState::init() {
     ledController->switchOffGreen();
     ledController->switchOffRed();

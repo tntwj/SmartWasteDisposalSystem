@@ -4,12 +4,8 @@
 #include "WasteReceived.h"
 #include <Arduino.h>
 
-EnteringWaste::EnteringWaste() {
-}
-
 void EnteringWaste::init() {
     stateMsg = "ENTERING_WASTE";
-    currentTime = millis();
     doorController->openFront();
     ledController->switchOnGreen();
     lcd->clear();
@@ -17,15 +13,23 @@ void EnteringWaste::init() {
     lcd->print("PRESS CLOSE");
     lcd->setCursor(0, 1);
     lcd->print("WHEN DONE");
+    noInterrupts();
     closePressed = false;
+    interrupts();
+    startTime = millis();
 }
 
 State* EnteringWaste::handle() {
     if (wasteDetector->isFull()) {
         return new ContainerFull();
     }
-    if (closePressed || millis() - currentTime >= ENTERING_WASTE_PERIOD) {
+    noInterrupts();
+    bool currentCloseButtonState = closePressed;
+    interrupts();
+    if (currentCloseButtonState || millis() - startTime >= ENTERING_WASTE_PERIOD) {
+        noInterrupts();
         closePressed = false;
+        interrupts();
         return new WasteReceived();
     }
     return nullptr;

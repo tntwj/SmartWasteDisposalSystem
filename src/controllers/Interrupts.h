@@ -1,8 +1,8 @@
 #ifndef __SYSTEM_INTERRUPTS__
 #define __SYSTEM_INTERRUPTS__
 
-extern bool openPressed;
-extern bool closePressed;
+extern volatile bool openPressed;
+extern volatile bool closePressed;
 
 void setupButtons(int openPin, int closePin);
 

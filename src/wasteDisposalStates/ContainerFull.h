@@ -14,9 +14,8 @@ extern LiquidCrystal_I2C* lcd;
 
 class ContainerFull : public State {
     private:
-        unsigned long currentTime;
+        unsigned long startTime;
     public:
-        ContainerFull();
         void init() override;
         State* handle() override;
 };

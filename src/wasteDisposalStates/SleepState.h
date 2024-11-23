@@ -11,7 +11,6 @@ extern LiquidCrystal_I2C* lcd;
 
 class SleepState: public State {
     public:
-        SleepState();
         void init() override;
         State* handle() override;
 };

@@ -8,7 +8,7 @@ extern WasteDetector* wasteDetector;
 
 class MeasureLevelTask: public Task {
     public:
-        void tick();
+        void tick() override;
 };
 
 #endif

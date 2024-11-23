@@ -8,7 +8,7 @@ extern TemperatureController* tempController;
 
 class MeasureTemperatureTask: public Task {
     public:
-        void tick();
+        void tick() override;
 };
 
 #endif

@@ -31,8 +31,8 @@ LedController* ledController;
 LiquidCrystal_I2C* lcd;
 Scheduler sched;
 
-bool openPressed = false;
-bool closePressed = false;
+volatile bool openPressed = false;
+volatile bool closePressed = false;
 bool restorePressed = false;
 String stateMsg;
 

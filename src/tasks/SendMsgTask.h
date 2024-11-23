@@ -13,7 +13,7 @@ extern String stateMsg;
 
 class SendMsgTask: public Task {
     public:
-        void tick();
+        void tick() override;
 };
 
 #endif

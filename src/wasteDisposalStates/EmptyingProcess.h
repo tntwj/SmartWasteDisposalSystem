@@ -14,9 +14,8 @@ extern LiquidCrystal_I2C* lcd;
 
 class EmptyingProcess : public State {
     private:
-        unsigned long currentTime;
+        unsigned long startTime;
     public:
-        EmptyingProcess();
         void init() override;
         State* handle() override;
 };

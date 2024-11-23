@@ -12,9 +12,8 @@ extern LiquidCrystal_I2C* lcd;
 
 class WasteReceived : public State {
     private:
-        unsigned long currentTime;
+        unsigned long startTime;
     public:
-        WasteReceived();
         void init() override;
         State* handle() override;
 };

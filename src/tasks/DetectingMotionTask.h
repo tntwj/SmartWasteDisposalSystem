@@ -8,7 +8,7 @@ extern MotionDetector* motionDetector;
 
 class DetectingMotionTask: public Task {
     public:
-        void tick();
+        void tick() override;
 };
 
 #endif

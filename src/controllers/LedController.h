@@ -4,7 +4,6 @@
 #include "components/Led.h"
 
 class LedController {
-
     public:
         LedController(Led* greenLed, Led* redLed);
         ~LedController();
