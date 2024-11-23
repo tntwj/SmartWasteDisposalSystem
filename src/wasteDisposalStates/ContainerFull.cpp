@@ -2,8 +2,8 @@
 #include "SleepState.h"
 #include "EmptyingProcess.h"
 
-void ContainerFull::init() {
-    stateMsg = "CONTAINER_FULL";
+void ContainerFull::execute() {
+    state = "CONTAINER_FULL";
     ledController->switchOffGreen();
     ledController->switchOnRed();
     doorController->close();
@@ -13,11 +13,11 @@ void ContainerFull::init() {
     startTime = millis();
 }
 
-State* ContainerFull::handle() {
+State* ContainerFull::next() {
     if (millis() - startTime >= AWAKE_PERIOD) {
-        return new SleepState();
+        return new SleepState(CONTAINER_FULL);
     }
-    if (stateMsg == "EMPTYING_PROCESS") {
+    if (state == "EMPTYING_PROCESS") {
         return new EmptyingProcess();
     }
     return nullptr;

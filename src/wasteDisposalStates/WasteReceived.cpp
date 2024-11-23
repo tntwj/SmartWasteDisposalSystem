@@ -2,8 +2,8 @@
 #include "headers/Defines.h"
 #include "Idle.h"
 
-void WasteReceived::init() {
-    stateMsg = "WASTE_RECEIVED";
+void WasteReceived::execute() {
+    state = "WASTE_RECEIVED";
     doorController->close();
     lcd->clear();
     lcd->setCursor(0, 0);
@@ -11,7 +11,7 @@ void WasteReceived::init() {
     startTime = millis();
 }
 
-State* WasteReceived::handle() {
+State* WasteReceived::next() {
     if (millis() - startTime >= WASTE_RECEIVED_PERIOD) {
         return new Idle();
     }

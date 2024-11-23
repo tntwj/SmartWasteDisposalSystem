@@ -3,8 +3,8 @@
 #include "SleepState.h"
 #include "headers/Defines.h"
 
-void Idle::init() {
-    stateMsg = "IDLE";
+void Idle::execute() {
+    state = "IDLE";
     ledController->switchOnGreen();
     lcd->clear();
     lcd->setCursor(0, 0);
@@ -17,7 +17,7 @@ void Idle::init() {
     startTime = millis();
 }
 
-State* Idle::handle() {
+State* Idle::next() {
     noInterrupts();
     bool currentOpenButtonState = openPressed;
     interrupts();
@@ -31,7 +31,7 @@ State* Idle::handle() {
         startTime = millis();
     }
     if (millis() - startTime >= AWAKE_PERIOD) {
-        return new SleepState();
+        return new SleepState(IDLE);
     }
     return nullptr;
 }

@@ -4,8 +4,8 @@
 #include "WasteReceived.h"
 #include <Arduino.h>
 
-void EnteringWaste::init() {
-    stateMsg = "ENTERING_WASTE";
+void EnteringWaste::execute() {
+    state = "ENTERING_WASTE";
     doorController->openFront();
     ledController->switchOnGreen();
     lcd->clear();
@@ -19,7 +19,7 @@ void EnteringWaste::init() {
     startTime = millis();
 }
 
-State* EnteringWaste::handle() {
+State* EnteringWaste::next() {
     if (wasteDetector->isFull()) {
         return new ContainerFull();
     }

@@ -8,15 +8,15 @@
 
 extern WasteDetector* wasteDetector;
 extern bool volatile closePressed;
-extern String stateMsg;
+extern String state;
 extern LiquidCrystal_I2C* lcd;
 
 class EnteringWaste : public State {
     private:
         unsigned long startTime;
     public:
-        void init() override;
-        State* handle() override;
+        void execute() override;
+        State* next() override;
 };
 
 #endif

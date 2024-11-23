@@ -1,7 +1,7 @@
 #include "DangerousTemp.h"
 
-void DangerousTemp::init() {
-    stateMsg = "DANGEROUS_TEMP";
+void DangerousTemp::execute() {
+    state = "DANGEROUS_TEMP";
     ledController->switchOffGreen();
     ledController->switchOnRed();
     doorController->close();
@@ -10,7 +10,7 @@ void DangerousTemp::init() {
     lcd->print("PROBLEM DETECTED");
 }
 
-State* DangerousTemp::handle() {
+State* DangerousTemp::next() {
     if (!tempController->isTempHigh()) {
         ledController->switchOffRed();
     }

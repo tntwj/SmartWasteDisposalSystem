@@ -9,15 +9,15 @@
 
 extern LedController* ledController;
 extern DoorController* doorController;
-extern String stateMsg;
+extern String state;
 extern LiquidCrystal_I2C* lcd;
 
 class ContainerFull : public State {
     private:
         unsigned long startTime;
     public:
-        void init() override;
-        State* handle() override;
+        void execute() override;
+        State* next() override;
 };
 
 #endif

@@ -9,7 +9,7 @@
 
 extern LedController* ledController;
 extern MotionDetector* motionDetector;
-extern String stateMsg;
+extern String state;
 extern LiquidCrystal_I2C* lcd;
 extern volatile bool openPressed;
 
@@ -17,8 +17,8 @@ class Idle : public State {
     private:
         unsigned long startTime;
     public:
-        void init() override;
-        State* handle() override;
+        void execute() override;
+        State* next() override;
 };
 
 #endif

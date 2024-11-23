@@ -34,7 +34,7 @@ Scheduler sched;
 volatile bool openPressed = false;
 volatile bool closePressed = false;
 bool restorePressed = false;
-String stateMsg;
+String state;
 
 void setup() {
     MsgService.init();

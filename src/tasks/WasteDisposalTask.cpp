@@ -5,17 +5,17 @@ WasteDisposalTask::WasteDisposalTask() {
     this->currentState = new Idle();
     this->stateBeforeHighTemp = nullptr;
     this->isInDangerousTempState = false;
-    this->currentState->init();
+    this->currentState->execute();
 }
 
 void WasteDisposalTask::tick() {
     State* nextState = nullptr;
     bool isCurrentTempHigh = tempController->isTempHigh();
-    nextState = this->currentState->handle();
+    nextState = this->currentState->next();
     if (nextState != nullptr && !isCurrentTempHigh && !this->isInDangerousTempState) {
         delete this->currentState;
         this->currentState = nextState;
-        this->currentState->init();
+        this->currentState->execute();
     }
     /** 
      * This task controls the switching between dangerous temp and normal state too.
@@ -26,12 +26,12 @@ void WasteDisposalTask::tick() {
         this->isInDangerousTempState = true;
         this->stateBeforeHighTemp = this->currentState;
         this->currentState = new DangerousTemp();
-        this->currentState->init();
+        this->currentState->execute();
     } else if (restorePressed && this->isInDangerousTempState) {
-        restorePressed = false;
         this->isInDangerousTempState = false;
         delete currentState;
         this->currentState = this->stateBeforeHighTemp;
-        this->currentState->init();
+        this->currentState->execute();
     }
+    restorePressed = false;
 }

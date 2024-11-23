@@ -2,8 +2,8 @@
 #include "headers/Defines.h"
 #include "Idle.h"
 
-void EmptyingProcess::init() {
-    stateMsg = "EMPTYING_PROCESS";
+void EmptyingProcess::execute() {
+    state = "EMPTYING_PROCESS";
     doorController->openBack();
     lcd->clear();
     lcd->setCursor(0, 0);
@@ -13,7 +13,7 @@ void EmptyingProcess::init() {
     this->startTime = millis();
 }
 
-State* EmptyingProcess::handle() {
+State* EmptyingProcess::next() {
     if (millis() - startTime >= EMPTYING_PROCESS) {
         doorController->close();
         ledController->switchOffRed();

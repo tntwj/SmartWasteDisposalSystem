@@ -1,13 +1,13 @@
 #include "ReceiveMsgTask.h"
 #include <Arduino.h>
 
-extern String stateMsg;
+extern String state;
 
 void ReceiveMsgTask::tick() {
     if (MsgService.isMsgAvailable()) {
         Msg* msg = MsgService.receiveMsg();
-        if (msg->getContent() == "1" && stateMsg == "CONTAINER_FULL") {
-            stateMsg = "EMPTYING_PROCESS";
+        if (msg->getContent() == "1" && state == "CONTAINER_FULL") {
+            state = "EMPTYING_PROCESS";
         } else if (msg->getContent() == "0") {
             restorePressed = true;
         } 

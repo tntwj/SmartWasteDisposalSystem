@@ -5,7 +5,7 @@
  */
 void SendMsgTask::tick() {
     MsgService.sendMsg(
-        "STATE:" + String(stateMsg) 
+        "STATE:" + String(state) 
         + "|TEMP:" + String(tempController->getTemp()) 
         + "|LEVEL:" + String(wasteDetector->getLevel()));
 }

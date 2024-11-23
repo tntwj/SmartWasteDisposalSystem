@@ -4,24 +4,27 @@
 #include <Arduino.h>
 #include "controllers/Interrupts.h"
 
-void SleepState::init() {
+void SleepState::execute() {
     ledController->switchOffGreen();
     ledController->switchOffRed();
     lcd->clear();
     lcd->noBacklight();
     lcd->noDisplay();
     sleep();
+    lcd->display();
+    lcd->backlight();
 }
 
-State* SleepState::handle() {
-    if (motionDetector->hasDetected()) {
-        lcd->display();
-        lcd->backlight();
-        if (stateMsg == "IDLE") {
-            return new Idle();
-        } else if (stateMsg == "CONTAINER_FULL") {
-            return new ContainerFull();
-        }
+SleepState::SleepState(PreviousState prevState) {
+    this->prevState = prevState;
+}
+
+State* SleepState::next() {
+    if (prevState == IDLE) {
+        return new Idle();
+    } else if (prevState == CONTAINER_FULL) {
+        return new ContainerFull();
+    } else {
+        return nullptr;
     }
-    return nullptr;
 }
