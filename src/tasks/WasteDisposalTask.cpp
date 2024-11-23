@@ -2,34 +2,36 @@
 #include "wasteDisposalStates/DangerousTemp.h"
 
 WasteDisposalTask::WasteDisposalTask() {
-    currentState->init();
+    this->currentState = new Idle();
+    this->stateBeforeHighTemp = nullptr;
+    this->isInDangerousTempState = false;
+    this->currentState->init();
 }
 
 void WasteDisposalTask::tick() {
     State* nextState = nullptr;
     bool isCurrentTempHigh = tempController->isTempHigh();
-    nextState = currentState->handle();
-    if (nextState != nullptr && !isCurrentTempHigh) {
-        delete currentState;
-        currentState = nextState;
-        currentState->init();
+    nextState = this->currentState->handle();
+    if (nextState != nullptr && !isCurrentTempHigh && !this->isInDangerousTempState) {
+        delete this->currentState;
+        this->currentState = nextState;
+        this->currentState->init();
     }
     /** 
-     * We also decided to let this task control the switching between dangerous temp and normal state.
-     * It has to be said that an operator might push the restore button, meaning that the high temp issue
-     * has supposedly been fixed. In that case the system upon restore will go to into a dangerous temp state again
-     * if the problem was not actually fixed.
+     * This task controls the switching between dangerous temp and normal state too.
+     * An operator may push the restore button, meaning that the high temp issue has supposedly been fixed.
+     * If the operator did not actually fix the issue the system will go into a dangerous temp state again.
      */
-    if (restorePressed && stateMsg == "DANGEROUS_TEMP") {
+    if (isCurrentTempHigh && !this->isInDangerousTempState) {
+        this->isInDangerousTempState = true;
+        this->stateBeforeHighTemp = this->currentState;
+        this->currentState = new DangerousTemp();
+        this->currentState->init();
+    } else if (restorePressed && this->isInDangerousTempState) {
         restorePressed = false;
+        this->isInDangerousTempState = false;
         delete currentState;
-        currentState = stateBeforeHighTemp;
-        currentState->init();
-        isPrevTempHigh = false;
-    } else if (!isPrevTempHigh && isCurrentTempHigh) {
-        isPrevTempHigh = isCurrentTempHigh;
-        stateBeforeHighTemp = currentState;
-        currentState = new DangerousTemp();
-        currentState->init();
+        this->currentState = this->stateBeforeHighTemp;
+        this->currentState->init();
     }
 }
