@@ -32,11 +32,13 @@ void WasteDisposalTask::tick() {
         this->isInDangerousTempState = false;
         delete currentState;
         /**
-         * Things could go wrong if stateBeforeHighTemp is null.
-         * Realistically speaking this block is executed after the block
-         * above was executed in a previous tick.
+         * Shouldn't need it but better safe than sorry.
          */
-        this->currentState = this->stateBeforeHighTemp;
+        if (this->stateBeforeHighTemp == nullptr) {
+            this->currentState = new Idle();
+        } else {
+            this->currentState = this->stateBeforeHighTemp;
+        }
         this->currentState->execute();
     }
     restorePressed = false;
