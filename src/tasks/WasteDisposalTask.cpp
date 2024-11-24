@@ -9,7 +9,15 @@ WasteDisposalTask::WasteDisposalTask() {
     this->currentState->execute();
 }
 
+WasteDisposalTask::~WasteDisposalTask() {
+    delete this->currentState;
+    delete this->stateBeforeHighTemp;
+}
+
 void WasteDisposalTask::tick() {
+    /** 
+     * This task controls the switching between dangerous temp and normal state too.
+     */
     State* nextState = nullptr;
     bool isCurrentTempHigh = tempController->isTempHigh();
     nextState = this->currentState->next();
@@ -17,13 +25,7 @@ void WasteDisposalTask::tick() {
         delete this->currentState;
         this->currentState = nextState;
         this->currentState->execute();
-    }
-    /** 
-     * This task controls the switching between dangerous temp and normal state too.
-     * An operator may push the restore button, meaning that the high temp issue has supposedly been fixed.
-     * If the operator did not actually fix the issue the system will go into a dangerous temp state again.
-     */
-    if (isCurrentTempHigh && !this->isInDangerousTempState) {
+    } else if (isCurrentTempHigh && !this->isInDangerousTempState) {
         this->isInDangerousTempState = true;
         this->stateBeforeHighTemp = this->currentState;
         this->currentState = new DangerousTemp();
@@ -31,15 +33,8 @@ void WasteDisposalTask::tick() {
     } else if (restorePressed && this->isInDangerousTempState) {
         this->isInDangerousTempState = false;
         delete currentState;
-        /**
-         * Shouldn't need it but better safe than sorry.
-         */
-        if (this->stateBeforeHighTemp == nullptr) {
-            this->currentState = new Idle();
-        } else {
-            this->currentState = this->stateBeforeHighTemp;
-        }
-        this->currentState->execute();
+        this->currentState = this->stateBeforeHighTemp;
+        this->stateBeforeHighTemp = nullptr;
     }
     restorePressed = false;
 }

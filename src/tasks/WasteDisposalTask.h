@@ -16,6 +16,7 @@ class WasteDisposalTask: public Task {
 
     public:
         WasteDisposalTask();
+        ~WasteDisposalTask();
         void tick() override;
 };
 
